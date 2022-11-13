@@ -9,3 +9,12 @@ require("jacob.plugins.nvim-cmp")
 require("jacob.plugins.lsp.mason")
 require("jacob.plugins.lsp.lspsaga")
 require("jacob.plugins.lsp.lspconfig")
+
+
+-- highlight yank
+vim.cmd([[
+  augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=50}
+  augroup END
+]])
