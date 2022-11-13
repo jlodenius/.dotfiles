@@ -68,7 +68,12 @@ return packer.startup(function(user)
   use("hrsh7th/cmp-nvim-lsp") -- to make lsp appear in auto completion
   use({ "glepnir/lspsaga.nvim", branch = "main" }) -- some visual stuff
   use("onsails/lspkind.nvim") -- icons to auto complete window
-  -- use("jose-elias-alvares/typescript.nvim") -- improves typescript lsp (lets try it later..)
+  use("jose-elias-alvarez/typescript.nvim") -- improves typescript lsp
+
+
+  -- formatting & linting
+  use("jose-elias-alvarez/null-ls.nvim")
+  use("jayp0521/mason-null-ls.nvim")
 
 
   if packer_bootstrap then

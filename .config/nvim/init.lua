@@ -9,6 +9,7 @@ require("jacob.plugins.nvim-cmp")
 require("jacob.plugins.lsp.mason")
 require("jacob.plugins.lsp.lspsaga")
 require("jacob.plugins.lsp.lspconfig")
+require("jacob.plugins.lsp.null-ls")
 
 
 -- highlight yank
