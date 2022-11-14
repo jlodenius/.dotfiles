@@ -32,7 +32,7 @@ mason_null_ls.setup({
 	-- list of sources
 	-- ADD MORE (https://github.com/jayp0521/mason-null-ls.nvim#available-null-ls-sources)
 	ensure_installed = {
-		"prettier",
+		"prettierd",
 		"stylua",
 		"eslint_d",
 	},
