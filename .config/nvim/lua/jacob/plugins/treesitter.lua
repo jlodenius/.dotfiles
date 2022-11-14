@@ -7,6 +7,10 @@ treesitter.setup({
 	highlight = { enable = true },
 	indent = { enable = true },
 	autotag = { enable = true },
+	-- requires commentstring plugin (used to comment jsx/tsx)
+	context_commentstring = {
+		enable = true,
+	},
 	-- Languages
 	-- ADD MORE (https://github.com/nvim-treesitter/nvim-treesitter#supported-languages)
 	ensure_installed = {

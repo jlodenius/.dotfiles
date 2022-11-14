@@ -87,6 +87,9 @@ return packer.startup(function(user)
 	-- git integration
 	use("lewis6991/gitsigns.nvim")
 
+	-- to comment jsx/tsx with comment plugin
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
