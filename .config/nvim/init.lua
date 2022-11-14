@@ -10,7 +10,9 @@ require("jacob.plugins.lsp.mason")
 require("jacob.plugins.lsp.lspsaga")
 require("jacob.plugins.lsp.lspconfig")
 require("jacob.plugins.lsp.null-ls")
-
+require("jacob.plugins.autopairs")
+require("jacob.plugins.treesitter")
+require("jacob.plugins.gitsigns")
 
 -- highlight yank
 vim.cmd([[
