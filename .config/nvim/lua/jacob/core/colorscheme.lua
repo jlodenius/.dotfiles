@@ -1,7 +1,24 @@
+vim.g.nightflyTransparent = true
+vim.opt.background = "dark"
+
+local hl = function(thing, opts)
+  vim.api.nvim_set_hl(0, thing, opts)
+end
+
 vim.cmd("colorscheme nightfly")
 
-local status, _ = pcall(vim.cmd, "colorscheme nightfly")
-if not status then
-  print("colorscheme not found")
-  return
-end
+hl("LineNr", {
+  fg = "#5EACD3",
+})
+
+hl("CursorLineNr", {
+  bg = "None",
+})
+
+hl("CursorLine", {
+  bg = "None",
+})
+
+hl("Visual", {
+  bg = "#2B79A0",
+})

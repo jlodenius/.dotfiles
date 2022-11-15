@@ -3,7 +3,6 @@ if not sata_status then
   return
 end
 
-
 saga.init_lsp_saga({
   move_in_saga = { prev = "<C-k>", next = "<C-j>" },
   finder_action_keys = {
@@ -11,5 +10,5 @@ saga.init_lsp_saga({
   },
   definition_action_keys = {
     edit = "<CR>",
-  }
+  },
 })

@@ -21,3 +21,9 @@ vim.cmd([[
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=50}
   augroup END
 ]])
+
+-- remove trailing whitespace on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	pattern = { "*" },
+	command = [[%s/\s\+$//e]],
+})
