@@ -8,14 +8,14 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 
   sources = {
-    null_ls.builtins.formatting.prettier.with({
-      extra_args = { "--no-semi", "--single-quote" },
-    }),
+    -- null_ls.builtins.formatting.prettier.with({
+    --   extra_args = { "--no-semi", "--single-quote" },
+    -- }),
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.diagnostics.eslint_d.with({
       -- only enable eslint if root has .eslintrc.js
       condition = function(utils)
-        return utils.root_has_file(".eslintrc.js")
+        return utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
       end,
     }),
   },

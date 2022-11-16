@@ -32,6 +32,3 @@ opt.backspace = "indent,eol,start"
 -- split windows
 opt.splitright = true
 opt.splitbelow = true
-
--- makes vim interpret hyphened words as one word
-opt.iskeyword:append("-")
