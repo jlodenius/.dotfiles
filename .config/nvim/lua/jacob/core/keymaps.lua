@@ -2,12 +2,14 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-
 -- general keymaps
+
+-- jump between buffers
+keymap.set("n", "<C-,>", ":bprevious<cr>")
+keymap.set("n", "<C-.>", ":bnext<cr>")
 
 -- x key does not copy deleted character to register
 keymap.set("n", "x", '"_x"')
-
 
 -- split screen commands
 keymap.set("n", "<leader>sv", "<C-w>v") -- split vertically
@@ -19,7 +21,6 @@ keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<cr>")
-
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
