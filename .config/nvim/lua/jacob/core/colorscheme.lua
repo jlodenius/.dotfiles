@@ -21,3 +21,18 @@ hl("CursorLine", {
 hl("Visual", {
   bg = "#2B79A0",
 })
+
+-- Telescope
+local telescopeBgColour = "#212121"
+
+hl("TelescopeBorder", {
+  bg = telescopeBgColour,
+})
+
+hl("TelescopeNormal", {
+  bg = telescopeBgColour,
+})
+
+hl("TelescopeTitle", {
+  bg = telescopeBgColour,
+})
