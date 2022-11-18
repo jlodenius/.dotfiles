@@ -89,6 +89,12 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim")
 
+  -- status bar
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
