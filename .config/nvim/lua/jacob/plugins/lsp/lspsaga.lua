@@ -1,5 +1,5 @@
 local saga_status, saga = pcall(require, "lspsaga")
-if not sata_status then
+if not saga_status then
   return
 end
 

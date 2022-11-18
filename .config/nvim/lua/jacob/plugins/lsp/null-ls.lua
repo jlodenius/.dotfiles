@@ -13,9 +13,10 @@ null_ls.setup({
     -- }),
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.diagnostics.eslint_d.with({
-      -- only enable eslint if root has .eslintrc
+      -- only enable eslint if project has a .eslintrc
       condition = function(utils)
-        return utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+        local hf = utils.has_file -- cant use root_has_file because of monorepos
+        return hf(".eslintrc.js") or hf(".eslintrc.json") or hf(".eslintrc")
       end,
     }),
   },

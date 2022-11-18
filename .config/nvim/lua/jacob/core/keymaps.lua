@@ -4,6 +4,9 @@ local keymap = vim.keymap
 
 -- general keymaps
 
+-- rename var
+vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
+
 -- jump between buffers
 keymap.set("n", "<C-,>", ":bprevious<cr>")
 keymap.set("n", "<C-.>", ":bnext<cr>")

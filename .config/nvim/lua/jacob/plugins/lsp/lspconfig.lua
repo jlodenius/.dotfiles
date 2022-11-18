@@ -3,21 +3,17 @@ if not lspconfig_status then
   return
 end
 
-
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
   return
 end
-
 
 local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
   return
 end
 
-
 local keymap = vim.keymap
-
 
 -- only enable these keybinds when lsp server is available
 local on_attach = function(client, bufnr)
@@ -44,10 +40,7 @@ local on_attach = function(client, bufnr)
   end
 end
 
-
-
 -- Setup LSP servers
-
 
 -- used to enable autocompletion in all LSPs
 local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -55,15 +48,15 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 -- html server
 lspconfig["html"].setup({
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
 })
 
 -- typescript server (slightly different setup because of plugin)
 typescript.setup({
   server = {
     capabilities = capabilities,
-    on_attach = on_attach
-  }
+    on_attach = on_attach,
+  },
 })
 
 -- css server
@@ -85,11 +78,11 @@ lspconfig["emmet_ls"].setup({
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
--- lua server 
+-- lua server
 lspconfig["sumneko_lua"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  settings = { 
+  settings = {
     Lua = {
       -- make the language server recognize "vim" global
       diagnostics = {
