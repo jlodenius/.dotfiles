@@ -8,6 +8,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 
   sources = {
+    -- FORMATTING
     null_ls.builtins.formatting.prettier.with({
       extra_args = { "--no-semi", "--single-quote" },
       condition = function(utils)
@@ -17,6 +18,8 @@ null_ls.setup({
       end,
     }),
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.prismaFmt,
+    -- DIAGNOSTICS
     null_ls.builtins.diagnostics.eslint_d.with({
       -- only enable eslint if project has a .eslintrc
       condition = function(utils)
@@ -36,8 +39,9 @@ null_ls.setup({
         callback = function()
           vim.lsp.buf.format({
             filter = function(client)
-              --  only use null-ls for formatting instead of lsp server
-              return client.name == "null-ls"
+              -- only use null-ls or prisma for formatting
+              -- add other clients here if necessary
+              return client.name == "null-ls" or client.name == "prismals"
             end,
             bufnr = bufnr,
           })

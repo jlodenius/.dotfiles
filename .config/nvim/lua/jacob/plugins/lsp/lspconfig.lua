@@ -45,6 +45,12 @@ end
 -- used to enable autocompletion in all LSPs
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
+-- prisma
+lspconfig["prismals"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- html server
 lspconfig["html"].setup({
   capabilities = capabilities,
