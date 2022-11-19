@@ -32,3 +32,6 @@ opt.backspace = "indent,eol,start"
 -- split windows
 opt.splitright = true
 opt.splitbelow = true
+
+-- dont highlight search
+vim.opt.hlsearch = false

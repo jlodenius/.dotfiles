@@ -8,9 +8,14 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 
   sources = {
-    -- null_ls.builtins.formatting.prettier.with({
-    --   extra_args = { "--no-semi", "--single-quote" },
-    -- }),
+    null_ls.builtins.formatting.prettier.with({
+      extra_args = { "--no-semi", "--single-quote" },
+      condition = function(utils)
+        -- only enable prettier if project has a .prettierrc
+        -- leave .prettierrc empty to use above conf, otherwise .prettierrc will take precedence
+        return utils.has_file(".prettierrc")
+      end,
+    }),
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.diagnostics.eslint_d.with({
       -- only enable eslint if project has a .eslintrc
