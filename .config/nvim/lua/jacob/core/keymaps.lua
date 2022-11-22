@@ -35,3 +35,9 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>")
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
+
+-- too many typos
+vim.cmd(":command W w")
+vim.cmd(":command WQ wq")
+vim.cmd(":command Wq wq")
+vim.cmd(":command Q q")
