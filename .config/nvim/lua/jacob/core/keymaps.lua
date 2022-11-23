@@ -44,3 +44,6 @@ vim.cmd(":command Q q")
 
 -- show code diagnostic
 keymap.set("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>")
+
+-- :shrug:
+keymap.set("n", "<C-f>", "<C-f><C-u><C-d>")
