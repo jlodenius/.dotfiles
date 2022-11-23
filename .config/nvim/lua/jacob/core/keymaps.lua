@@ -41,3 +41,6 @@ vim.cmd(":command W w")
 vim.cmd(":command WQ wq")
 vim.cmd(":command Wq wq")
 vim.cmd(":command Q q")
+
+-- show code diagnostic
+keymap.set("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>")

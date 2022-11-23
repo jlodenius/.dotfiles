@@ -34,6 +34,9 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
 
+  -- reload lsp, after prisma generate etc
+  keymap.set("n", "<leader>rl", "<cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR> <cmd>edit<CR>")
+
   -- typescript specific
   if client.name == "tsserver" then
     keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
