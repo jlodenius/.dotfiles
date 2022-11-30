@@ -21,6 +21,10 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
+-- resize splits
+keymap.set("n", "<leader>]", "<cmd>vertical resize +10<CR>")
+keymap.set("n", "<leader>[", "<cmd>vertical resize -10<CR>")
+
 -- plugins
 
 -- vim-maximizer
