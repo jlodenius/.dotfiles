@@ -95,6 +95,9 @@ return packer.startup(function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
 
+  -- git tool
+  use("tpope/vim-fugitive")
+
   if packer_bootstrap then
     require("packer").sync()
   end
