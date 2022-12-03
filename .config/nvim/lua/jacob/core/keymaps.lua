@@ -49,5 +49,6 @@ vim.cmd(":command Q q")
 -- show code diagnostic
 keymap.set("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>")
 
--- :shrug:
-keymap.set("n", "<C-f>", "<C-f><C-u><C-d>")
+-- center cursor after jumping vertically
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
