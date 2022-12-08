@@ -15,3 +15,5 @@ source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.
 # ALIASES
 alias dotfiles='/usr/bin/git --git-dir=/Users/jacoblodenius/.dotfiles/ --work-tree=/Users/jacoblodenius'
 alias kc="kubectl"
+alias python=/usr/bin/python3
+alias pip=/usr/bin/pip3
