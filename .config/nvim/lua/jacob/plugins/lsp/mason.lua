@@ -26,6 +26,7 @@ mason_lspconfig.setup({
     "sumneko_lua",
     "emmet_ls",
     "prismals",
+    "rust_analyzer",
   },
 })
 

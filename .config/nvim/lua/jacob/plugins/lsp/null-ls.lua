@@ -19,6 +19,7 @@ null_ls.setup({
     }),
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.prismaFmt,
+    null_ls.builtins.formatting.rustfmt,
     -- DIAGNOSTICS
     null_ls.builtins.diagnostics.eslint_d.with({
       -- only enable eslint if project has a .eslintrc

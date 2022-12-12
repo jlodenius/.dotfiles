@@ -38,3 +38,8 @@ vim.opt.hlsearch = false
 
 -- cursor settings
 vim.cmd("set guicursor=n:blinkon100,n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20")
+
+-- supposed to not add comment on new line
+-- doesn't seem to work..
+-- see :help fo-table
+vim.cmd("set formatoptions-=cro")

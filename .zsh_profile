@@ -12,6 +12,9 @@ source /Users/jacoblodenius/.bash_completion.d/b1b
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
+# https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # ALIASES
 alias dotfiles='/usr/bin/git --git-dir=/Users/jacoblodenius/.dotfiles/ --work-tree=/Users/jacoblodenius'
 alias kc="kubectl"
