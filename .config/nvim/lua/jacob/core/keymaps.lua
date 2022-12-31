@@ -8,7 +8,7 @@ local keymap = vim.keymap
 keymap.set("n", "<leader>d", '"_d')
 keymap.set("v", "<leader>d", '"_d')
 
--- jump between buffers
+-- jump between open buffers (kind of sucks)
 keymap.set("n", "<C-,>", ":bprevious<CR>")
 keymap.set("n", "<C-.>", ":bnext<CR>")
 
@@ -39,6 +39,15 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>")
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
+keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+keymap.set("n", "<leader>/", function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+    winblend = 10,
+    previewer = false,
+  }))
+end, { desc = "[/] Fuzzily search in current buffer]" })
 
 -- too many typos
 vim.cmd(":command W w")
