@@ -25,7 +25,7 @@ keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 keymap.set("n", "<leader>]", "<cmd>vertical resize +10<CR>")
 keymap.set("n", "<leader>[", "<cmd>vertical resize -10<CR>")
 
--- plugins
+-- plugin keymaps
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")

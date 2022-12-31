@@ -28,4 +28,6 @@ treesitter.setup({
     "gitignore",
   },
   auto_install = true,
+  -- TODO: check out keybinds for selecting/jumping
+  -- example setup https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L222
 })
