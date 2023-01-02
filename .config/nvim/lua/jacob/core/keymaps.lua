@@ -8,6 +8,9 @@ local keymap = vim.keymap
 keymap.set("n", "<leader>d", '"_d')
 keymap.set("v", "<leader>d", '"_d')
 
+-- paste and keep register
+keymap.set("x", "<leader>p", '"_dP')
+
 -- jump between open buffers (kind of sucks)
 keymap.set("n", "<C-,>", ":bprevious<CR>")
 keymap.set("n", "<C-.>", ":bnext<CR>")
@@ -24,6 +27,32 @@ keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 -- resize splits
 keymap.set("n", "<leader>]", "<cmd>vertical resize +10<CR>")
 keymap.set("n", "<leader>[", "<cmd>vertical resize -10<CR>")
+
+-- move highlighted
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- show code diagnostic
+keymap.set("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>")
+
+-- center cursor after jumping vertically
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- center cursor after search
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
+
+-- yank to system clipboard
+keymap.set("n", "<leader>y", '"+y')
+keymap.set("v", "<leader>y", '"+y')
+keymap.set("n", "<leader>Y", '"+Y')
+
+-- never press Q
+keymap.set("n", "Q", "<nop>")
+
+-- replace current word
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- plugin keymaps
 
@@ -54,10 +83,5 @@ vim.cmd(":command W w")
 vim.cmd(":command WQ wq")
 vim.cmd(":command Wq wq")
 vim.cmd(":command Q q")
-
--- show code diagnostic
-keymap.set("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>")
-
--- center cursor after jumping vertically
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
+vim.cmd(":command QA qa")
+vim.cmd(":command Qa qa")
