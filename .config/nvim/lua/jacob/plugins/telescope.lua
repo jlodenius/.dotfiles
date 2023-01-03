@@ -18,6 +18,7 @@ telescope.setup({
         ["<C-j>"] = actions.move_selection_next,
         ["<C-h>"] = actions.select_horizontal, -- open file in horizontal split
         ["<C-v>"] = actions.select_vertical, -- open file in vertical split
+        ["<C-q>"] = actions.smart_add_to_qflist, -- add to qf list
       },
     },
   },

@@ -36,3 +36,9 @@ hl("TelescopeNormal", {
 hl("TelescopeTitle", {
   bg = telescopeBgColour,
 })
+
+-- Nvim tree
+-- More options https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L1563
+hl("NvimTreeNormal", {
+  bg = "None",
+})

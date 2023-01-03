@@ -11,9 +11,16 @@ keymap.set("v", "<leader>d", '"_d')
 -- paste and keep register
 keymap.set("x", "<leader>p", '"_dP')
 
--- jump between open buffers (kind of sucks)
-keymap.set("n", "<C-,>", ":bprevious<CR>")
-keymap.set("n", "<C-.>", ":bnext<CR>")
+-- open qf list
+keymap.set("n", "Q", ":copen<CR>")
+
+-- TODO: find a keybind
+-- clear cf list
+-- :cexpr []
+
+-- navigate qf list
+keymap.set("n", "<C-,>", ":cprevious<CR>zz")
+keymap.set("n", "<C-.>", ":cnext<CR>zz")
 
 -- x key does not copy deleted character to register
 keymap.set("n", "x", '"_x')
@@ -47,9 +54,6 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("n", "<leader>y", '"+y')
 keymap.set("v", "<leader>y", '"+y')
 keymap.set("n", "<leader>Y", '"+Y')
-
--- never press Q
-keymap.set("n", "Q", "<nop>")
 
 -- replace current word
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
