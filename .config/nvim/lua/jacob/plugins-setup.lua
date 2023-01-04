@@ -30,11 +30,9 @@ return packer.startup(function(use)
   -- packer manages itself
   use("wbthomason/packer.nvim")
 
-  use("nvim-lua/plenary.nvim") -- something other plugins might need
+  use("nvim-lua/plenary.nvim") -- dependency to other plugins
 
-  use("bluz71/vim-nightfly-guicolors") -- color scheme
-
-  use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+  use({ "rose-pine/neovim", as = "rose-pine" }) -- colour scheme
 
   use("szw/vim-maximizer") -- maximizes and restores current window
 
@@ -86,16 +84,14 @@ return packer.startup(function(use)
   use("windwp/nvim-autopairs")
   use("windwp/nvim-ts-autotag")
 
-  -- git integration
-  use("lewis6991/gitsigns.nvim")
-
   -- status bar
   use({
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
 
-  -- git tool
+  -- git
+  use("lewis6991/gitsigns.nvim")
   use("tpope/vim-fugitive")
 
   if packer_bootstrap then
