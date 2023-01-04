@@ -34,6 +34,8 @@ return packer.startup(function(use)
 
   use({ "rose-pine/neovim", as = "rose-pine" }) -- colour scheme
 
+  use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+
   use("szw/vim-maximizer") -- maximizes and restores current window
 
   use("numToStr/Comment.nvim") -- commenting with gc command
