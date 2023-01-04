@@ -9,6 +9,7 @@ vim.g.loaded_netrwPlugin = 1
 
 nvimtree.setup({
   view = {
+    width = 40,
     number = true,
     relativenumber = true,
   },
