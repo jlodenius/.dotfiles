@@ -28,3 +28,8 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
   command = [[%s/\s\+$//e]],
 })
+
+-- html highlighting in mjml files
+vim.cmd([[
+  autocmd BufNewFile,BufRead *.mjml set filetype=html
+]])
