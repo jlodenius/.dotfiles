@@ -33,3 +33,9 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 vim.cmd([[
   autocmd BufNewFile,BufRead *.mjml set filetype=html
 ]])
+
+-- html highlighting in svelte files
+-- TODO: install svelte plugin?
+vim.cmd([[
+  autocmd BufNewFile,BufRead *.svelte set filetype=html
+]])

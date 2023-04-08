@@ -111,3 +111,9 @@ lspconfig["rust_analyzer"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
+-- svelte server
+lspconfig["svelte"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})

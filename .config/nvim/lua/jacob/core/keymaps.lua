@@ -19,6 +19,7 @@ keymap.set("n", "Q", ":copen<CR>")
 -- :cexpr []
 
 -- navigate qf list
+-- DOESN'T WORK, cant bind <C-.> and <C-,>
 keymap.set("n", "<C-,>", ":cprevious<CR>zz")
 keymap.set("n", "<C-.>", ":cnext<CR>zz")
 

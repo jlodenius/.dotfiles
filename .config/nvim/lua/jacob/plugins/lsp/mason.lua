@@ -27,6 +27,7 @@ mason_lspconfig.setup({
     "emmet_ls",
     "prismals",
     "rust_analyzer",
+    "svelte",
   },
 })
 
