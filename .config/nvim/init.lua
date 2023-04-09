@@ -35,7 +35,7 @@ vim.cmd([[
 ]])
 
 -- html highlighting in svelte files
--- TODO: install svelte plugin?
+-- TODO: FIX Svelte arm64, checkhealth
 vim.cmd([[
   autocmd BufNewFile,BufRead *.svelte set filetype=html
 ]])

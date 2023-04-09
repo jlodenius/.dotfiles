@@ -53,6 +53,10 @@ hl("CursorLineNr", {
   bg = "None",
 })
 
+hl("Cursor", {
+  bg = "#FFFFFF",
+})
+
 hl("CursorLine", {
   bg = "None",
 })

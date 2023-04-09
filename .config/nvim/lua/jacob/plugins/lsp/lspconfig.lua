@@ -78,6 +78,12 @@ lspconfig["tailwindcss"].setup({
   on_attach = on_attach,
 })
 
+-- svelte server
+lspconfig["svelte"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- emmet language server
 lspconfig["emmet_ls"].setup({
   capabilities = capabilities,
@@ -86,16 +92,18 @@ lspconfig["emmet_ls"].setup({
 })
 
 -- lua server
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
     Lua = {
+      telemetry = { enable = false },
       -- make the language server recognize "vim" global
       diagnostics = {
         globals = { "vim" },
       },
       workspace = {
+        checkThirdParty = false,
         -- make language server aware of runtime files
         library = {
           [vim.fn.expand("$VIMRUNTIME/lua")] = true,
@@ -108,12 +116,6 @@ lspconfig["sumneko_lua"].setup({
 
 -- rust server
 lspconfig["rust_analyzer"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
--- svelte server
-lspconfig["svelte"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })

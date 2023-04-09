@@ -26,6 +26,7 @@ treesitter.setup({
     "vim",
     "dockerfile",
     "gitignore",
+    "svelte",
   },
   auto_install = true,
   -- TODO: check out keybinds for selecting/jumping
