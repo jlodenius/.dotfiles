@@ -20,3 +20,4 @@ alias df='/usr/bin/git --git-dir=/Users/jacoblodenius/.dotfiles/ --work-tree=/Us
 alias kc="kubectl"
 alias python=/usr/bin/python3
 alias pip=/usr/bin/pip3
+alias nvim='/Users/jacoblodenius/.local/share/bob/nvim-bin/nvim'

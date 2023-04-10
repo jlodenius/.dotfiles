@@ -10,10 +10,12 @@ require("jacob.plugins.lsp.mason")
 require("jacob.plugins.lsp.lspsaga")
 require("jacob.plugins.lsp.lspconfig")
 require("jacob.plugins.lsp.null-ls")
-require("jacob.plugins.autopairs")
+-- replaced with mini pairs
+-- require("jacob.plugins.autopairs")
 require("jacob.plugins.treesitter")
 require("jacob.plugins.gitsigns")
 require("jacob.plugins.lualine")
+require("jacob.plugins.mini")
 
 -- highlight yank
 vim.cmd([[
@@ -32,10 +34,4 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- html highlighting in mjml files
 vim.cmd([[
   autocmd BufNewFile,BufRead *.mjml set filetype=html
-]])
-
--- html highlighting in svelte files
--- TODO: FIX Svelte arm64, checkhealth
-vim.cmd([[
-  autocmd BufNewFile,BufRead *.svelte set filetype=html
 ]])

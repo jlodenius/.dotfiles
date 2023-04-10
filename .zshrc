@@ -1,6 +1,7 @@
 export PATH=$PATH:$HOME/bin:/Users/jacoblodenius/Library/Python/3.9/bin:/usr/bin
 export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export PATH="/Users/jacoblodenius/.local/share/bob/nvim-bin/nvim:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
