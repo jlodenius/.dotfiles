@@ -42,9 +42,8 @@ return packer.startup(function(use)
 
   -- to comment jsx/tsx with comment plugin
   use("JoosepAlviste/nvim-ts-context-commentstring")
-  use("nvim-tree/nvim-tree.lua") -- file explorer
-
   use("kyazdani42/nvim-web-devicons") -- file icons
+  use("nvim-tree/nvim-tree.lua") -- file explorer
 
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder

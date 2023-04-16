@@ -42,7 +42,7 @@ null_ls.setup({
             filter = function(client)
               -- only use null-ls or prisma for formatting
               -- add other clients here if necessary
-              return client.name == "null-ls" or client.name == "prismals"
+              return client.name == "null-ls" or client.name == "prismals" or client.name == "rust_analyzer"
             end,
             bufnr = bufnr,
           })
