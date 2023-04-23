@@ -16,7 +16,7 @@ source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # ALIASES
-alias df='/usr/bin/git --git-dir=/Users/jacoblodenius/.dotfiles/ --work-tree=/Users/jacoblodenius'
+alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias kc="kubectl"
 alias python=/usr/bin/python3
 alias pip=/usr/bin/pip3
