@@ -16,6 +16,6 @@ export XMODIFIERS=@im=fcitx
 export GPG_TTY=$(tty)
 
 # Volume stuff
-alias vu='~/scripts/volume.sh raise'
-alias vd='~/scripts/volume.sh lower'
-alias vm='~/scripts/volume.sh mute'
+alias vu='~/.scripts/volume.sh raise'
+alias vd='~/.scripts/volume.sh lower'
+alias vm='~/.scripts/volume.sh mute'
