@@ -15,7 +15,7 @@ require("jacob.plugins.lsp.null-ls")
 require("jacob.plugins.treesitter")
 require("jacob.plugins.gitsigns")
 require("jacob.plugins.lualine")
-require("jacob.plugins.mini")
+-- require("jacob.plugins.mini")
 
 -- highlight yank
 vim.cmd([[

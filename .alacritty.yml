@@ -1,0 +1,23 @@
+window:
+  opacity: 0.9
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: GoMono NF
+    style: Regular
+
+  bold:
+    family: GoMono NF
+    style: Bold
+
+  italic:
+    family: GoMono NF
+    style: Italic
+
+  size: 16.0
+
+live_config_reload: true
