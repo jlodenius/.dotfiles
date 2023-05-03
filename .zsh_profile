@@ -10,7 +10,6 @@ export XMODIFIERS=@im=fcitx
 # Fix for gpg sign git commits
 export GPG_TTY=$(tty)
 
-
 # ALIASES
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias kc="kubectl"
