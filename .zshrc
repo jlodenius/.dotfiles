@@ -1,6 +1,7 @@
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/share/bob/v0.9.0/nvim-linux64/bin
 export EDITOR='vim'
+export XDG_CONFIG_HOME=$HOME/.config
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/

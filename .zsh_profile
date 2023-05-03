@@ -14,8 +14,3 @@ export GPG_TTY=$(tty)
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias kc="kubectl"
 alias vim="nvim"
-
-# Volume stuff
-alias vu='~/.scripts/volume.sh raise'
-alias vd='~/.scripts/volume.sh lower'
-alias vm='~/.scripts/volume.sh mute'
