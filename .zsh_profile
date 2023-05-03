@@ -3,17 +3,17 @@ source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
 
-# ALIASES
-alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias kc="kubectl"
-alias vim="nvim"
-
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 # Fix for gpg sign git commits
 export GPG_TTY=$(tty)
+
+# ALIASES
+alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias kc="kubectl"
+alias vim="nvim"
 
 # Volume stuff
 alias vu='~/.scripts/volume.sh raise'
