@@ -159,16 +159,16 @@ set $menu wofi --show=drun --lines=5 --prompt=""
 #
 mode "resize" {
     # Resize with hjkl
-    bindsym $left resize grow width 20px
+    bindsym $left resize shrink width 20px
     bindsym $down resize shrink height 20px
     bindsym $up resize grow height 20px
-    bindsym $right resize shrink width 20px
+    bindsym $right resize grow width 20px
 
     # Same but with arrow keys
-    bindsym Left resize grow width 20px
+    bindsym Left resize shrink width 20px
     bindsym Down resize shrink height 20px
     bindsym Up resize grow height 20px
-    bindsym Right resize shrink width 20px
+    bindsym Right resize grow width 20px
 
     # Return to default mode
     bindsym Return mode "default"
@@ -178,11 +178,29 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 bindsym $mod+m move workspace to output right
 
+#
+# Media controls:
+#
+  # Pulse Audio controls
+  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+  bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+
+  # Sreen brightness controls
+  bindsym XF86MonBrightnessDown exec dsplight down 5
+  bindsym XF86MonBrightnessUp exec dsplight up 5
+
+  # Media player controls
+  bindsym XF86AudioPlay exec playerctl play
+  bindsym XF86AudioPause exec playerctl pause
+  bindsym XF86AudioNext exec playerctl next
+  bindsym XF86AudioPrev exec playerctl previous
+
 # Personal settings
 focus_follows_mouse no
 gaps inner 5
-client.focused #8fd4ff #8fd4ff #8fd4ff #8fd4ff #8fd4ff
-default_border pixel 1
+client.focused #ff007f #ff007f #ff007f #ff007f #ff007f
+default_border pixel 2
 
 # Display settings
 # Display current settings "swaymsg -t get_outputs"
