@@ -111,7 +111,7 @@
         "disable-scroll": true,
         "format": "{icon} {name}",
         "format-icons": {
-            "focused": "",
+            "focused": "󰣇",
             "default": ""
         }
     },
