@@ -67,6 +67,12 @@
 #tray {
     padding-left: 10px;
     padding-right: 10px;
+    border: 2px solid #F5C43F;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 
