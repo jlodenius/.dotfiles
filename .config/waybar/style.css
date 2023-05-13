@@ -48,7 +48,7 @@
 
 /* The whole bar */
 #waybar {
-    background: #323232;
+    background: rgba(50, 50, 50, 0.8);
     color: white;
     font-family: monospace;
     font-size: 20px;
@@ -60,19 +60,18 @@
 #cpu,
 #custom-keyboard-layout,
 #memory,
-#mode,
 #network,
 #pulseaudio,
 #temperature,
 #tray {
     padding-left: 10px;
     padding-right: 10px;
-    border: 2px solid #F5C43F;
-    border-top: none;
-    border-bottom: none;
-    border-right: none;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 5px;
+    border-radius: 5px;
+    background: #2A2F4F;
+    color: #FDE2F3;
 }
 
 
@@ -137,6 +136,7 @@
 }
 
 #mode {
+    margin-left: 15px;
     background: #64727D;
     border-top: 2px solid white;
     /* To compensate for the top border and still have vertical centering */

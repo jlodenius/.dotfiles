@@ -8,7 +8,8 @@
     "height": 30,
 
     "modules-left": [
-        "sway/workspaces"
+        "sway/workspaces",
+        "sway/mode"
     ],
     "modules-center": [
         "sway/window"

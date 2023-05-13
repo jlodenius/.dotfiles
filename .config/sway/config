@@ -197,7 +197,7 @@ bindsym $mod+m move workspace to output right
 # Personal settings
 focus_follows_mouse no
 gaps inner 5
-client.focused #ff007f #ff007f #ff007f #ff007f #ff007f
+client.focused #add8e6 #add8e6 #add8e6 #add8e6 #add8e6
 default_border pixel 2
 
 # Display settings
