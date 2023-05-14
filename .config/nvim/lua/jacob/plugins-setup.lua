@@ -96,7 +96,8 @@ return packer.startup(function(use)
 	use("tpope/vim-fugitive")
 
 	-- mini
-	use("echasnovski/mini.nvim")
+	use({ "echasnovski/mini.pairs", branch = "stable" })
+	use({ "echasnovski/mini.surround", branch = "stable" })
 
 	if packer_bootstrap then
 		require("packer").sync()
