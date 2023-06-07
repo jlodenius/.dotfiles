@@ -180,9 +180,9 @@ bindsym $mod+m move workspace to output right
 # Media controls:
 #
   # Pulse Audio controls
-  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
-  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
-  bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+  bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+  bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
   # Sreen brightness controls
   bindsym XF86MonBrightnessDown exec dsplight down 5

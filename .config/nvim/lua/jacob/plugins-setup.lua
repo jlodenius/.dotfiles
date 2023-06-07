@@ -95,6 +95,9 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("tpope/vim-fugitive")
 
+	-- surround
+	use("tpope/vim-surround")
+
 	-- mini
 	use({ "echasnovski/mini.pairs", branch = "stable" })
 	use({ "echasnovski/mini.surround", branch = "stable" })

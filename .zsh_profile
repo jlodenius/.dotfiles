@@ -14,3 +14,4 @@ export GPG_TTY=$(tty)
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias kc="kubectl"
 alias vim="nvim"
+alias bt="bluetuith"
