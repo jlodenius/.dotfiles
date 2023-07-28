@@ -200,6 +200,9 @@ gaps inner 5
 client.focused #add8e6 #add8e6 #add8e6 #add8e6 #add8e6
 default_border pixel 2
 
+# Laptop keyboard mapping, TODO: set for only laptop keyboard instead of *
+input * xkb_options caps:none,ctrl:nocaps
+
 # Display settings
 # Display current settings "swaymsg -t get_outputs"
 # Display config help "man sway-output"
