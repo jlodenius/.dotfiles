@@ -1,25 +1,27 @@
--- setup
-require("jacob.plugins-setup")
-
 -- core
-require("jacob.core.options")
-require("jacob.core.keymaps")
-require("jacob.core.colorscheme")
+require("core.keymaps")
+require("core.options")
 
--- plugins
-require("jacob.plugins.comment")
-require("jacob.plugins.nvim-tree")
-require("jacob.plugins.telescope")
-require("jacob.plugins.nvim-cmp")
-require("jacob.plugins.lsp.mason")
-require("jacob.plugins.lsp.lspsaga")
-require("jacob.plugins.lsp.lspconfig")
-require("jacob.plugins.lsp.null-ls")
-require("jacob.plugins.treesitter")
-require("jacob.plugins.gitsigns")
-require("jacob.plugins.lualine")
-require("jacob.plugins.mini-surround")
-require("jacob.plugins.mini-pairs")
+-- set up lazy plugin manager
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  {
+    { import = "plugins" },
+    { import = "plugins.lsp" },
+  }
+})
 
 -- highlight yank
 vim.cmd([[
@@ -39,3 +41,4 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 vim.cmd([[
   autocmd BufNewFile,BufRead *.mjml set filetype=html
 ]])
+
