@@ -1,53 +1,68 @@
 return {
-	"savq/melange-nvim",
-	priority = 1000,
-	config = function()
-    vim.cmd[[colorscheme melange]]
-
-    local hl = function(thing, opts)
-      vim.api.nvim_set_hl(0, thing, opts)
+  {
+    "xiyaowong/transparent.nvim",
+    priority = 1001,
+    config = function ()
+      local transparent = require("transparent")
+      transparent.setup({
+        extra_groups = {
+          "NvimTreeNormal" -- NvimTree
+        },
+      })
+      vim.cmd[[:TransparentEnable]]
     end
+  },
+  {
+    "savq/melange-nvim",
+    priority = 1000,
+    config = function()
+      vim.cmd[[colorscheme melange]]
 
-    hl("LineNr", {
-      fg = "#5EACD3",
-    })
+      local hl = function(thing, opts)
+        vim.api.nvim_set_hl(0, thing, opts)
+      end
 
-    hl("CursorLineNr", {
-      bg = "None",
-    })
+      hl("LineNr", {
+        fg = "#5EACD3",
+      })
 
-    hl("Cursor", {
-      bg = "#FFFFFF",
-    })
+      hl("CursorLineNr", {
+        bg = "None",
+      })
 
-    hl("CursorLine", {
-      bg = "None",
-    })
+      hl("Cursor", {
+        bg = "#FFFFFF",
+      })
 
-    hl("Visual", {
-      bg = "#655279",
-    })
+      hl("CursorLine", {
+        bg = "None",
+      })
 
-    -- Telescope
-    local telescopeBgColour = "#212121"
+      hl("Visual", {
+        bg = "#655279",
+      })
 
-    hl("TelescopeBorder", {
-      bg = telescopeBgColour,
-    })
+      -- Telescope
+      local telescopeBgColour = "#152238"
 
-    hl("TelescopeNormal", {
-      bg = telescopeBgColour,
-    })
+      hl("TelescopeBorder", {
+        bg = telescopeBgColour,
+      })
 
-    hl("TelescopeTitle", {
-      bg = telescopeBgColour,
-    })
+      hl("TelescopeNormal", {
+        bg = telescopeBgColour,
+      })
 
-    -- Nvim tree
-    -- More options https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L1563
-    hl("NvimTreeNormal", {
-      bg = "None",
-    })
+      hl("TelescopeTitle", {
+        bg = telescopeBgColour,
+      })
 
-	end,
+      -- Nvim tree
+      -- More options https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L1563
+      hl("NvimTreeNormal", {
+        bg = "None",
+      })
+
+    end,
+  }
 }

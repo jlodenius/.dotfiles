@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- transparent_background
+vim.g.transparent_background = true
+
 -- line number
 opt.relativenumber = true
 opt.number = true
