@@ -125,7 +125,7 @@ exec swayidle -w \
 # Layout stuff:
 #
     # Change how to split new windows
-    bindsym $mod+h splith
+    bindsym $mod+b splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
