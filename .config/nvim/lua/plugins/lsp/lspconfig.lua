@@ -6,13 +6,37 @@ return {
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
+    local border = "single"
     local lspconfig = require("lspconfig")
+    local lspconfigWindows = require("lspconfig.ui.windows")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local keymap = vim.keymap
 
     local on_attach = function(client, bufnr)
       -- keybind options
       local opts = { noremap = true, silent = true, buffer = bufnr }
+
+      -- set border on hover
+      -- :h vim.lsp.handlers.hover()
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover, {
+          border = border
+        }
+      )
+
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help, {
+          border = border
+        }
+      )
+
+      vim.diagnostic.config {
+        float = { border = border }
+      }
+
+      lspconfigWindows.default_options = {
+        border = border
+      }
 
       -- keybinds
       keymap.set("n", "gD", function () vim.lsp.buf.declaration() end, opts) -- go to declaration

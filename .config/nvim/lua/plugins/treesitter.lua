@@ -5,11 +5,12 @@ return {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          highlight = { enable = true },
-          indent = { enable = true },
-          autotag = { enable = true },
-          context_commentstring = { enable = true }, -- requires commentstring plugin (used to comment jsx/tsx)
-          ensure_installed = {
+        highlight = { enable = true },
+        indent = { enable = true },
+        autotag = { enable = true },
+        context_commentstring = { enable = true }, -- requires commentstring plugin (used to comment jsx/tsx)
+        ensure_installed = {
+            "rust",
             "json",
             "javascript",
             "typescript",
@@ -28,7 +29,6 @@ return {
             "svelte",
         },
         sync_install = false,
-        indent = { enable = true },
       })
     end,
  }

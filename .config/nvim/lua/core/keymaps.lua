@@ -19,9 +19,8 @@ keymap.set("n", "Q", ":copen<CR>")
 -- :cexpr []
 
 -- navigate qf list
--- DOESN'T WORK, cant bind <C-.> and <C-,>
-keymap.set("n", "<C-,>", ":cprevious<CR>zz")
-keymap.set("n", "<C-.>", ":cnext<CR>zz")
+keymap.set("n", "<leader>,", ":cprevious<CR>zz")
+keymap.set("n", "<leader>.", ":cnext<CR>zz")
 
 -- x key does not copy deleted character to register
 keymap.set("n", "x", '"_x')
