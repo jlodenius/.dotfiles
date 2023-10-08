@@ -1,14 +1,14 @@
 return {
   {
     "echasnovski/mini.pairs",
-    config = function ()
+    config = function()
       local pairs = require("mini.pairs")
       pairs.setup()
-    end
+    end,
   },
   {
     "echasnovski/mini.surround",
-    config = function ()
+    config = function()
       local surround = require("mini.surround")
 
       surround.setup({
@@ -53,8 +53,7 @@ return {
 
         -- Whether to disable showing non-error feedback
         silent = false,
-    })
-
-    end
+      })
+    end,
   },
 }

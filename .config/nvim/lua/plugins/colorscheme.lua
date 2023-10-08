@@ -2,25 +2,23 @@ return {
   {
     "xiyaowong/transparent.nvim",
     priority = 1001,
-    config = function ()
+    config = function()
       local transparent = require("transparent")
       transparent.setup({
         extra_groups = {
-          "NvimTreeNormal" -- NvimTree
+          "NvimTreeNormal", -- NvimTree
         },
       })
-      vim.cmd[[:TransparentEnable]]
-    end
+      vim.cmd([[:TransparentEnable]])
+    end,
   },
   {
     "savq/melange-nvim",
     priority = 1000,
     config = function()
-      vim.cmd[[colorscheme melange]]
+      vim.cmd([[colorscheme melange]])
 
-      local hl = function(thing, opts)
-        vim.api.nvim_set_hl(0, thing, opts)
-      end
+      local hl = function(thing, opts) vim.api.nvim_set_hl(0, thing, opts) end
 
       hl("LineNr", {
         fg = "#5EACD3",
@@ -62,7 +60,6 @@ return {
       hl("NvimTreeNormal", {
         bg = "None",
       })
-
     end,
-  }
+  },
 }

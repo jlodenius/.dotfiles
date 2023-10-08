@@ -18,28 +18,24 @@ return {
 
       -- set border on hover
       -- :h vim.lsp.handlers.hover()
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover, {
-          border = border
-        }
-      )
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = border,
+      })
 
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help, {
-          border = border
-        }
-      )
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        border = border,
+      })
 
-      vim.diagnostic.config {
-        float = { border = border }
-      }
+      vim.diagnostic.config({
+        float = { border = border },
+      })
 
       lspconfigWindows.default_options = {
-        border = border
+        border = border,
       }
 
       -- keybinds
-      keymap.set("n", "gD", function () vim.lsp.buf.declaration() end, opts) -- go to declaration
+      keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts) -- go to declaration
       keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts) -- see definition and make edits in window
       keymap.set("n", "gv", ":vsplit | lua vim.lsp.buf.definition()<CR>", opts) -- open defining buffer in vertical split
       keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts) -- see available code actions
@@ -141,6 +137,5 @@ return {
         },
       },
     })
-
-    end,
+  end,
 }

@@ -1,6 +1,6 @@
 return {
   "szw/vim-maximizer",
-  config = function ()
+  config = function()
     -- keymaps
     vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
   end,
