@@ -14,3 +14,6 @@
 --     "nvim-telescope/telescope.nvim",
 --   },
 -- }
+
+-- Return empty table to avoid error
+return {}
