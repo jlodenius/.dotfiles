@@ -9,8 +9,8 @@ return {
         name = "Flash",
         s = { function() require("flash").jump() end, "Flash Jump" },
         t = { function() require("flash").treesitter() end, "Flash Treesitter" },
-        r = { function() require("flash").treesitter_search() end, "Flash Treesitter Search" },
+        a = { function() require("flash").treesitter_search() end, "Flash Treesitter Search" },
       },
-    })
+    }, { prefix = "<leader>" })
   end,
 }
