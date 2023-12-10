@@ -125,8 +125,10 @@ exec swayidle -w \
 # Layout stuff:
 #
     # Change how to split new windows
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    # yes, splitv is actually a horizontal split
+    # and splith is vertical..
+    bindsym $mod+b splitv
+    bindsym $mod+v splith
 
     # Switch the current container between different layout styles
     # bindsym $mod+s layout stacking
@@ -199,6 +201,16 @@ bindsym $mod+m move workspace to output right
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous
 
+#
+# Screenshot using Grim & Slurp
+#
+  # Fullscreen screenshot
+  bindsym Print exec grim ~/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png
+
+  # Selective screenshot
+  bindsym Shift+Print exec grim -g "$(slurp)" ~/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png
+
+
 # Personal settings
 focus_follows_mouse no
 gaps inner 5
@@ -212,7 +224,12 @@ input * xkb_options caps:none,ctrl:nocaps
 # Display current settings "swaymsg -t get_outputs"
 # Display config help "man sway-output"
 # Why fractional scaling sucks https://github.com/swaywm/sway/wiki#hidpi
-output DP-1 mode 3840x2160@59.997Hz position 1920 0
+
+# HOME
+# output DP-1 mode 3840x2160@59.997Hz position 1920 0
+# Caesari
+output DP-1 mode 3840x1080@59.968Hz position 1920 0
+# Laptop
 output eDP-1 mode 1920x1080@59.999Hz position 0 1080
 output * bg ~/Pictures/wallpapers/pxfuel.jpg fill
 

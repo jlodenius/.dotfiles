@@ -88,6 +88,12 @@ return {
       on_attach = on_attach,
     })
 
+    -- python server
+    lspconfig["pylsp"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- svelte server
     lspconfig["svelte"].setup({
       capabilities = capabilities,

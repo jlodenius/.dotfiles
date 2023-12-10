@@ -27,6 +27,7 @@ return {
         "dockerfile",
         "gitignore",
         "svelte",
+        "python",
       },
       sync_install = false,
     })

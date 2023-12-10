@@ -42,6 +42,7 @@ return {
 
         -- DIAGNOSTICS
         null_ls.builtins.diagnostics.stylelint,
+        null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.eslint_d.with({
           -- only enable eslint if project has a .eslintrc
           condition = function(utils)
