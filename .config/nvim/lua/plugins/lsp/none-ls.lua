@@ -30,6 +30,7 @@ return {
         -- FORMATTING
         null_ls.builtins.formatting.prettier.with({
           extra_args = { "--no-semi", "--single-quote" },
+          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
           condition = function(utils)
             -- only enable prettier if project has a .prettierrc
             -- leave .prettierrc empty to use above conf, otherwise .prettierrc will take precedence

@@ -1,0 +1,26 @@
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "DejaVuSansMono"
+style = "Bold"
+
+[font.italic]
+family = "DejaVuSansMono"
+style = "Italic"
+
+[font.normal]
+family = "DejaVuSansMono"
+style = "Regular"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+opacity = 0.9
