@@ -2,6 +2,9 @@
 require("core.keymaps")
 require("core.options")
 
+-- open scratchpad
+vim.api.nvim_create_user_command("Sp", "e ~/Notes/scratchpad.md", {})
+
 -- set up lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

@@ -41,7 +41,8 @@ return {
       keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts) -- see available code actions
       keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts) -- smart rename
       keymap.set("n", "<leader>d", function() vim.diagnostic.open_float() end, opts) -- show  diagnostics for line
-      keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts) -- show documentation for what is under cursor
+      -- lsp.buf.hover() is handled by strider.nvim
+      -- keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts) -- show documentation for what is under cursor
 
       -- not sure if neede
       vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
