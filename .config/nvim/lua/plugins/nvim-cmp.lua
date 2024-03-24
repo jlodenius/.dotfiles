@@ -17,6 +17,9 @@ return {
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
 
+    -- load custom snippets from ~/.config/nvim/snippets
+    require("luasnip.loaders.from_snipmate").lazy_load()
+
     cmp.setup({
       window = {
         completion = cmp.config.window.bordered(),
