@@ -40,16 +40,18 @@ return {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.prismaFmt,
         null_ls.builtins.formatting.rustfmt,
+        null_ls.builtins.formatting.black,
 
         -- DIAGNOSTICS
         null_ls.builtins.diagnostics.stylelint,
-        null_ls.builtins.diagnostics.flake8,
         null_ls.builtins.diagnostics.eslint_d.with({
           -- only enable eslint if project has a .eslintrc
           condition = function(utils)
             return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc" })
           end,
         }),
+        null_ls.builtins.diagnostics.flake8,
+        null_ls.builtins.diagnostics.mypy,
       },
 
       -- format on save

@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   config = function()
     local configs = require("nvim-treesitter.configs")
@@ -8,7 +9,6 @@ return {
       highlight = { enable = true },
       indent = { enable = true },
       autotag = { enable = true },
-      context_commentstring = { enable = true }, -- requires commentstring plugin (used to comment jsx/tsx)
       ensure_installed = {
         "rust",
         "json",
@@ -31,5 +31,8 @@ return {
       },
       sync_install = false,
     })
+
+    -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
+    require("ts_context_commentstring").setup()
   end,
 }

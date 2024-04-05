@@ -44,7 +44,7 @@ return {
       -- lsp.buf.hover() is handled by strider.nvim
       -- keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts) -- show documentation for what is under cursor
 
-      -- not sure if neede
+      -- jump to diagnostics
       vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
       vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
 
@@ -139,7 +139,7 @@ return {
       settings = {
         ["rust_analyzer"] = {
           cargo = {
-            allFeatures = true,
+            all_features = true,
           },
         },
       },
