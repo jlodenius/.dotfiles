@@ -1,5 +1,12 @@
 return {
   {
+    "echasnovski/mini.ai",
+    config = function()
+      local ai = require("mini.ai")
+      ai.setup({ n_lines = 500 })
+    end,
+  },
+  {
     "echasnovski/mini.pairs",
     config = function()
       local pairs = require("mini.pairs")
