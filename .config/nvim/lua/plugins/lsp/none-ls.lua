@@ -65,8 +65,7 @@ return {
               vim.lsp.buf.format({
                 filter = function(client)
                   -- only use null-ls for formatting
-                  -- add other clients here if necessary
-                  return client.name == "null-ls" or client.name == "prismals" or client.name == "rust_analyzer"
+                  return client.name == "null-ls"
                 end,
                 bufnr = bufnr,
               })

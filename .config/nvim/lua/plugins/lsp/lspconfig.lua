@@ -65,50 +65,50 @@ return {
       on_attach = on_attach,
     })
 
-    -- html server
+    -- html
     lspconfig["html"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    -- typescript server
+    -- typescript
     lspconfig["tsserver"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    -- css server
+    -- css
     lspconfig["cssls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    -- tailwindcss server
+    -- tailwindcss
     lspconfig["tailwindcss"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    -- python server
+    -- python
     lspconfig["pylsp"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    -- svelte server
+    -- svelte
     lspconfig["svelte"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    -- emmet language server
+    -- emmet
     lspconfig["emmet_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     })
 
-    -- lua server
+    -- lua
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
@@ -131,7 +131,7 @@ return {
       },
     })
 
-    -- rust server
+    -- rust
     lspconfig["rust_analyzer"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
@@ -139,9 +139,15 @@ return {
       settings = {
         ["rust_analyzer"] = {
           cargo = {
-            all_features = true,
+            allFeatures = true,
           },
         },
+      },
+      cmd = {
+        "rustup",
+        "run",
+        "stable",
+        "rust-analyzer",
       },
     })
   end,

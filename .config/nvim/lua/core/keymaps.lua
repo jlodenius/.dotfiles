@@ -62,6 +62,7 @@ keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 vim.cmd(":command W w")
 vim.cmd(":command WQ wq")
 vim.cmd(":command Wq wq")
+vim.cmd(":command Wqa wqa")
 vim.cmd(":command Q q")
 vim.cmd(":command QA qa")
 vim.cmd(":command Qa qa")
