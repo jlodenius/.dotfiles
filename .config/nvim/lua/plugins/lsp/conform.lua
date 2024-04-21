@@ -11,12 +11,12 @@ return {
       formatters_by_ft = {
         javascript = { "prettier" },
         typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
+        javascriptreact = { "rustywind", "prettier" },
+        typescriptreact = { "rustywind", "prettier" },
         svelte = { "prettier" },
         vue = { "prettier" },
         css = { "prettier" },
-        html = { "prettier" },
+        html = { "rustywind", "prettier" },
         less = { "prettier" },
         scss = { "prettier" },
         markdown = { "prettier" },
@@ -36,6 +36,13 @@ return {
             return utils.root_has_file(utils.current_path(), root_markers, target_files)
           end,
           prepend_args = { "--no-semi", "--single-quote" },
+        },
+        rustywind = {
+          condition = function()
+            local root_markers = { ".git", "package.json" }
+            local target_files = { "tailwind.config.ts" }
+            return utils.root_has_file(utils.current_path(), root_markers, target_files)
+          end,
         },
       },
       format_on_save = {
