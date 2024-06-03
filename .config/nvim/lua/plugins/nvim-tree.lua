@@ -19,7 +19,7 @@ return {
 
       -- custom mappings
       vim.keymap.set("n", "<C-v>", api.node.open.vertical, opts("Open: Vertical Split"))
-      vim.keymap.set("n", "<C-x>", api.node.open.horizontal, opts("Open: Horizontal Split"))
+      vim.keymap.set("n", "<C-h>", api.node.open.horizontal, opts("Open: Horizontal Split"))
     end
 
     local HEIGHT_RATIO = 0.8
@@ -66,7 +66,10 @@ return {
       on_attach = my_on_attach,
     })
 
-    -- toggle nvim-tree
+    -- toggle
     vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+    -- refresh
+    vim.keymap.set("n", "<leader>E", ":NvimTreeRefresh<CR>")
   end,
 }

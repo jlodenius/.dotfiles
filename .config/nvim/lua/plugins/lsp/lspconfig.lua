@@ -89,19 +89,10 @@ return {
       on_attach = on_attach,
     })
 
-    -- python
-    lspconfig["pylsp"].setup({
+    -- python pyright
+    lspconfig["pyright"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = {
-        pylsp = {
-          plugins = {
-            pycodestyle = {
-              ignore = { "E501" }, -- ignore line-length
-            },
-          },
-        },
-      },
     })
 
     -- svelte
