@@ -60,6 +60,7 @@ keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 
 -- too many typos
 vim.cmd(":command W w")
+vim.cmd(":command Wa wa")
 vim.cmd(":command WQ wq")
 vim.cmd(":command Wq wq")
 vim.cmd(":command Wqa wqa")

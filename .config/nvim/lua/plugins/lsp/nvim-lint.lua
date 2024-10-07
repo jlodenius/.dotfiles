@@ -23,6 +23,11 @@ return {
       python = { "mypy", "flake8" },
       css = { "stylelint" },
     }
+    lint.linters.stylelint.args = function()
+      local config_file = vim.fn.findfile(".stylelintrc", ".;")
+      if config_file == "" then return { "--disable" } end
+      return {}
+    end
     lint.linters.flake8.args = {
       function() return "--config" .. pyproject_root() end,
     }

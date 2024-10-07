@@ -49,9 +49,12 @@ return {
       vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
 
       -- typescript specific
-      if client.name == "tsserver" then
+      if client.name == "ts_ls" then
         keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
       end
+
+      -- fix rust highlighting
+      if client.name == "rust_analyzer" then client.server_capabilities.semanticTokensProvider = nil end
     end
 
     -- Setup LSP servers
@@ -72,7 +75,7 @@ return {
     })
 
     -- typescript
-    lspconfig["tsserver"].setup({
+    lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -87,6 +90,16 @@ return {
     lspconfig["tailwindcss"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        tailwindCSS = {
+          experimental = {
+            classRegex = {
+              { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+              { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+            },
+          },
+        },
+      },
     })
 
     -- python pyright

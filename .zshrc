@@ -11,6 +11,9 @@ ZSH=/usr/share/oh-my-zsh/
 ZSH_THEME="robbyrussell"
 
 plugins=(git)
+plugins=(virtualenv)
+
+eval "$(direnv hook zsh)"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then

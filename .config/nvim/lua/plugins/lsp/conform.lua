@@ -11,12 +11,12 @@ return {
       formatters_by_ft = {
         javascript = { "prettier" },
         typescript = { "prettier" },
-        javascriptreact = { "rustywind", "prettier" },
-        typescriptreact = { "rustywind", "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
         svelte = { "prettier" },
         vue = { "prettier" },
         css = { "prettier" },
-        html = { "rustywind", "prettier" },
+        html = { "prettier" },
         less = { "prettier" },
         scss = { "prettier" },
         markdown = { "prettier" },
@@ -31,11 +31,11 @@ return {
         },
         prettier = {
           condition = function()
-            local root_markers = { ".git", "package.json" }
-            local target_files = { ".prettierrc", ".prettierrc.json" }
+            local root_markers = { ".git" }
+            local target_files = { ".prettierrc", ".prettierrc.json", "prettier.config.mjs" }
             return utils.root_has_file(utils.current_path(), root_markers, target_files)
           end,
-          prepend_args = { "--no-semi", "--single-quote" },
+          -- prepend_args = { "--no-semi", "--single-quote" },
         },
         rustywind = {
           condition = function()
@@ -46,9 +46,8 @@ return {
         },
       },
       format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout = 500,
+        timeout_ms = 2000,
+        lsp_format = "fallback",
       },
     })
 

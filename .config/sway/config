@@ -226,9 +226,9 @@ input * xkb_options caps:none,ctrl:nocaps
 # Why fractional scaling sucks https://github.com/swaywm/sway/wiki#hidpi
 
 # HOME
-output DP-1 mode 3840x2160@59.997Hz position 1920 0
+# output DP-1 mode 3840x2160@59.997Hz position 1920 0
 # Caesari
-# output DP-1 mode 3840x1080@59.968Hz position 1920 0
+output DP-1 mode 3840x1080@59.968Hz position 1920 0
 # Laptop
 output eDP-1 mode 1920x1080@59.999Hz position 0 1080
 output * bg ~/Pictures/wallpapers/pxfuel.jpg fill
