@@ -31,3 +31,5 @@ set -x GPG_TTY (tty)
 set -x GTK_IM_MODULE fcitx
 set -x QT_IM_MODULE fcitx
 set -x XMODIFIERS @im=fcitx
+
+fish_vi_key_bindings
