@@ -36,7 +36,10 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- dont highlight search
-vim.opt.hlsearch = false
+opt.hlsearch = false
 
 -- cursor settings
 vim.cmd("set guicursor=n:blinkon100,n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20")
+
+-- persist undo history
+vim.opt.undofile = true
