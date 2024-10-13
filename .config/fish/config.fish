@@ -11,7 +11,7 @@ set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CURRENT_DESKTOP Sway
 set -x EDITOR vim
 
-# Aliases (translated from .zsh_profile)
+# Aliases
 alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias kc="kubectl"
 alias vim="nvim"
