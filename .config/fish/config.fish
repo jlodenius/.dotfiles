@@ -32,4 +32,17 @@ set -x GTK_IM_MODULE fcitx
 set -x QT_IM_MODULE fcitx
 set -x XMODIFIERS @im=fcitx
 
+zoxide init fish | source
+
+if type -q fzf
+  source /usr/share/fish/vendor_functions.d/fzf_key_bindings.fish
+  set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
+  set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+  set -gx FZF_CTRL_E_COMMAND 'fd --type d --hidden --follow --exclude .git'
+end
+
+if functions -q fzf_key_bindings
+    fzf_key_bindings
+end
+
 fish_vi_key_bindings
