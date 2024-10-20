@@ -32,6 +32,10 @@ set -x GTK_IM_MODULE fcitx
 set -x QT_IM_MODULE fcitx
 set -x XMODIFIERS @im=fcitx
 
+# Yank to clipboard
+set -g fish_clipboard_copy_cmd wl-copy
+set -g fish_clipboard_paste_cmd wl-paste
+
 zoxide init fish | source
 
 if type -q fzf
@@ -40,9 +44,3 @@ if type -q fzf
   set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
   set -gx FZF_CTRL_E_COMMAND 'fd --type d --hidden --follow --exclude .git'
 end
-
-if functions -q fzf_key_bindings
-    fzf_key_bindings
-end
-
-fish_vi_key_bindings

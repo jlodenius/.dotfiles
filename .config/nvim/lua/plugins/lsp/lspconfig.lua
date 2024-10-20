@@ -154,13 +154,12 @@ return {
           cargo = {
             allFeatures = true,
           },
+          completion = {
+            postfix = {
+              enable = false,
+            },
+          },
         },
-      },
-      cmd = {
-        "rustup",
-        "run",
-        "stable",
-        "rust-analyzer",
       },
     })
   end,
