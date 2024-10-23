@@ -214,8 +214,9 @@ bindsym $mod+m move workspace to output right
 # Personal settings
 focus_follows_mouse no
 gaps inner 5
-client.focused #add8e6 #add8e6 #add8e6 #add8e6 #add8e6
-default_border pixel 2
+# #74c7ec = Catppuccin sapphire (same as active worksapce in Waybar)
+client.focused #74c7ec #74c7ec #74c7ec #74c7ec #74c7ec
+default_border pixel 3
 
 # Laptop keyboard mapping, TODO: set for only laptop keyboard instead of *
 input * xkb_options caps:none,ctrl:nocaps
@@ -231,6 +232,8 @@ input * xkb_options caps:none,ctrl:nocaps
 output DP-1 mode 3840x1080@59.968Hz position 1920 0
 # Laptop
 output eDP-1 mode 1920x1080@59.999Hz position 0 1080
+
+# Set background image
 output * bg ~/Pictures/wallpapers/pxfuel.jpg fill
 
 bar {
