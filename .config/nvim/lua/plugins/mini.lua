@@ -7,13 +7,6 @@ return {
     end,
   },
   {
-    "echasnovski/mini.pairs",
-    config = function()
-      local pairs = require("mini.pairs")
-      pairs.setup()
-    end,
-  },
-  {
     "echasnovski/mini.surround",
     config = function()
       local surround = require("mini.surround")
