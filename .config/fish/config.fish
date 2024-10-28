@@ -32,17 +32,12 @@ set -x GTK_IM_MODULE fcitx
 set -x QT_IM_MODULE fcitx
 set -x XMODIFIERS @im=fcitx
 
-# Yank to clipboard (doesn't work as intended, fix at some point..)
-set -g fish_clipboard_copy_cmd wl-copy
-set -g fish_clipboard_paste_cmd wl-paste
-
 zoxide init fish | source
 
 # <C-T> = Fuzzy find files
-# <C-?> = Fuzzy find prev commands ?? TODO: fix this
+# <C-R> = Fuzzy find recent commands
 if type -q fzf
   source /usr/share/fish/vendor_functions.d/fzf_key_bindings.fish
   set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
   set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
-  set -gx FZF_CTRL_E_COMMAND 'fd --type d --hidden --follow --exclude .git'
 end
