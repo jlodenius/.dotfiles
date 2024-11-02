@@ -1,4 +1,4 @@
-{
+[{
     //
     // Global configuration
     //
@@ -31,15 +31,15 @@
     //
 
     "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-bluetooth": "{volume}% {icon}",
-      "format-muted": "{volume}% ",
-      "format-icons": {
-        "headphones": "",
-        "default": ["", ""]
-      },
-      "scroll-step": 1,
-      "on-click": "pavucontrol"
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "{volume}% ",
+        "format-icons": {
+            "headphones": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
     },
 
     "battery": {
@@ -49,9 +49,9 @@
             "critical": 15
         },
         // Connected to AC
-        "format": " {icon}  {capacity}%",
+        "format": " {icon} {capacity}%",
         // Not connected to AC
-        "format-discharging": "{icon}  {capacity}%",
+        "format-discharging": "{icon} {capacity}%",
         "format-icons": [
             "",
             "",
@@ -69,14 +69,14 @@
     },
 
     "clock#date": {
-      "interval": 10,
-      "format": "{:%e %b %Y}",
-      "tooltip-format": "{:%e %B %Y}"
+        "interval": 10,
+        "format": "{:%e %b %Y}",
+        "tooltip": false
     },
 
     "disk": {
-      "interval": 30,
-      "format": "󰣇 {percentage_free}%",
+        "interval": 30,
+        "format": "󰣇 {percentage_free}%",
     },
 
     "cpu": {
@@ -90,9 +90,9 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid}",
+        "format-wifi": " {essid}",
         "format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
-        "format-disconnected": "⚠  Disconnected",
+        "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}"
     },
 
@@ -112,21 +112,27 @@
     },
 
     "temperature": {
-      "critical-threshold": 80,
-      "interval": 5,
-      "format": "{icon} {temperatureC}°C",
-      "format-icons": [
-          "",
-          "",
-          "",
-          "",
-          ""
-      ],
-      "tooltip": true
+        "critical-threshold": 80,
+        "interval": 5,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "tooltip": true
     },
 
     "tray": {
         "icon-size": 21,
         "spacing": 10
     }
-}
+}, {
+    // Laptop screen
+    "output": "eDP-2"
+}, {
+    // External monitor
+    "output": "DP-1"
+}]

@@ -12,8 +12,9 @@
 /* The whole bar */
 #waybar {
   color: white;
-  font-family: monospace;
-  font-size: 20px;
+  font-family: "DejavuSansMono";
+  font-weight: 400;
+  font-size: 16px;
   background-color: shade(@base, 0.5);
 }
 
@@ -122,4 +123,9 @@
 #workspaces button.urgent {
   color: @maroon;
   border-color: @maroon;
+}
+
+/* Custom styles for DP-1 (external monitor) */
+#waybar.DP-1 {
+  font-size: 24px;
 }

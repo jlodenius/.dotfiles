@@ -25,10 +25,10 @@ set -x XDG_RUNTIME_DIR /run/user/(id -u)
 set -x EDITOR vim
 
 # Aliases
-alias df="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias kc="kubectl"
 alias vim="nvim"
 alias bt="bluetuith"
+alias lsa="ls -a"
 
 # Pyenv setup
 set -x PYENV_ROOT $HOME/.pyenv

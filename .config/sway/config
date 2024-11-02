@@ -28,12 +28,12 @@ set $calc wofi-calc
 #
 ### Idle configuration
 #
-# This will lock your screen after 300 seconds of inactivity, then turn off
+# This will lock your screen after 1000 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 1000 'swaylock -f -c 000000' \
+         timeout 1300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 000000'
 
 ### Key bindings
@@ -238,7 +238,7 @@ output DP-1 mode 3840x2160@59.997Hz position 1920 0
 output eDP-2 mode 2560x1600@240Hz position 0 1600
 
 # Set background image
-# output * bg ~/Pictures/wallpapers/pxfuel.jpg fill
+output * bg ~/Pictures/wallpapers/landscape.png fill
 
 bar {
     swaybar_command waybar
