@@ -15,7 +15,8 @@
   font-family: "DejavuSansMono";
   font-weight: 400;
   font-size: 16px;
-  background-color: shade(@base, 0.5);
+  /* background-color: shade(@base, 0.5); */
+  background-color: transparent;
 }
 
 /* Each module */
