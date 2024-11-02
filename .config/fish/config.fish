@@ -3,12 +3,25 @@ if status is-interactive
   status --is-interactive; and direnv hook fish | source
 end
 
+# Nvidia drivers stuff
+set -x LIBVA_DRIVER_NAME nvidia
+set -x XDG_SESSION_TYPE wayland
+set -x GBM_BACKEND nvidia-drm
+set -x __GLX_VENDOR_LIBRARY_NAME nvidia
+set -x WLR_NO_HARDWARE_CURSORS 1
+set -x MOZ_ENABLE_WAYLAND 1
+
 # Path exports
 set -x PATH $PATH $HOME/.cargo/bin
 set -x PATH $PATH $HOME/.local/share/bob/nvim-bin
 set -x PATH $PATH $HOME/.local/bin
+
+# XDG
 set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CURRENT_DESKTOP Sway
+set -x XDG_RUNTIME_DIR /run/user/(id -u)
+
+# Editor
 set -x EDITOR vim
 
 # Aliases
