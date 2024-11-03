@@ -48,7 +48,11 @@ set -x GTK_IM_MODULE fcitx
 set -x QT_IM_MODULE fcitx
 set -x XMODIFIERS @im=fcitx
 
+# Zoxide
 zoxide init fish | source
+
+# Vim keys
+fish_vi_key_bindings
 
 # <C-T> = Fuzzy find files
 # <C-R> = Fuzzy find recent commands
