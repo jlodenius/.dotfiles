@@ -192,8 +192,8 @@ bindsym $mod+m move workspace to output right
 
   # Sreen brightness controls, this doesn't work atm
   # Backlight controlled in /sys/class/backlight/intel_backlight
-  bindsym XF86MonBrightnessDown exec dsplight down 5
-  bindsym XF86MonBrightnessUp exec dsplight up 5
+  bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+  bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
   # Media player controls
   bindsym XF86AudioPlay exec playerctl play
