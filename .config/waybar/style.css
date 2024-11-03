@@ -1,3 +1,4 @@
+@import "/home/jacob/.cache/wal/colors-waybar.css";
 @import "mocha.css";
 
 /* Reset all styles */
@@ -38,7 +39,7 @@
 
 /* Individual modules */
 #network {
-  border-color: @mauve;
+  border-color: @color2;
 }
 
 #network.disconnected {
@@ -47,7 +48,7 @@
 }
 
 #pulseaudio {
-  border-color: @yellow;
+  border-color: @color3;
 }
 
 #pulseaudio.muted {
@@ -56,11 +57,11 @@
 }
 
 #disk {
-  border-color: @green;
+  border-color: @color4;
 }
 
 #cpu {
-  border-color: @teal;
+  border-color: @color5;
 }
 
 #cpu.warning {
@@ -74,7 +75,7 @@
 }
 
 #temperature {
-  border-color: @lavender;
+  border-color: @color6;
 }
 
 #temperature.critical {
@@ -83,7 +84,7 @@
 }
 
 #battery {
-  border-color: @sky;
+  border-color: @color7;
 }
 
 #battery.warning {
@@ -97,11 +98,11 @@
 }
 
 #clock.date {
-  border-color: @rosewater;
+  border-color: @color8;
 }
 
 #clock.time {
-  border-color: @blue;
+  border-color: @color9;
 }
 
 #workspaces button {

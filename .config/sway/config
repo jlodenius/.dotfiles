@@ -205,10 +205,10 @@ bindsym $mod+m move workspace to output right
 # Screenshot using Grim & Slurp
 #
   # Fullscreen screenshot
-  bindsym Print exec grim ~/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png
+  bindsym Print exec grim ~/Pictures/screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png
 
   # Selective screenshot
-  bindsym Shift+Print exec grim -g "$(slurp)" ~/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png
+  bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png
 
 
 # Personal settings

@@ -3,6 +3,9 @@ if status is-interactive
   status --is-interactive; and direnv hook fish | source
 end
 
+# Source color scheme from pywal
+source ~/.cache/wal/colors.fish
+
 # Nvidia drivers stuff
 set -x LIBVA_DRIVER_NAME nvidia
 set -x XDG_SESSION_TYPE wayland
