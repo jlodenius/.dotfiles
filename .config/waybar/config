@@ -1,138 +1,37 @@
 [{
-    //
-    // Global configuration
-    //
-
-    "layer": "top",
-    "position": "top",
-    "height": 30,
-
-    "modules-left": [
-        "sway/workspaces",
-        "sway/mode"
-    ],
-    //"modules-center": [
-    //  "sway/window"
-    //],
-    "modules-right": [
-        "network",
-        "pulseaudio",
-        "disk",
-        "cpu",
-        "temperature",
-        "battery",
-        "clock#time"
-    ],
-
-
-    //
-    // Modules
-    //
-
-    "pulseaudio": {
-        "format": "{icon} \u2009{volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-muted": " {volume}%",
-        "format-icons": {
-            "headphones": "",
-            "default": ["", ""]
-        },
-        "scroll-step": 1,
-        "on-click": "pavucontrol"
-    },
-
-    "battery": {
-        "interval": 10,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        // Connected to AC
-        "format": "\u2009{capacity}%",
-        // Not connected to AC
-        "format-discharging": "{icon} \u2009{capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "tooltip": true
-    },
-
-    "clock#time": {
-        "interval": 1,
-        "format": "{:%H:%M}",
-        "tooltip": false
-    },
-
-    "clock#date": {
-        "interval": 10,
-        "format": "{:%e %b %Y}",
-        "tooltip": false
-    },
-
-    "disk": {
-        "path": "/home",
-        "interval": 30,
-        "format": " {percentage_used}%",
-    },
-
-    "cpu": {
-        "interval": 5,
-        "format": " {usage}%",
-        "states": {
-          "warning": 70,
-          "critical": 90
-        }
-    },
-
-    "network": {
-        "interval": 5,
-        "format-wifi": " {essid}",
-        "format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
-        "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}"
-    },
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 120
-    },
-
-    "sway/workspaces": {
-        "all-outputs": false,
-        "disable-scroll": true,
-        "format": "{icon} {name}",
-        "format-icons": {
-            "focused": "󰣇",
-            "default": "󰣇"
-        }
-    },
-
-    "temperature": {
-        "critical-threshold": 80,
-        "interval": 5,
-        "format": "{icon}\u2009{temperatureC}°C",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "tooltip": true
-    },
-
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    }
+  // Laptop
+  "output": "eDP-2",
+  "include": "~/.config/waybar/module_config.json",
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "disk",
+    "cpu",
+    "temperature",
+    "battery",
+    "clock#time"
+  ]
 }, {
-    // Laptop screen
-    "output": "eDP-2"
-}, {
-    // External monitor
-    "output": "DP-1"
+  // External
+  "output": ["DP-1", "DP-3"],
+  "include": "~/.config/waybar/module_config.json",
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    "tray",
+    "idle_inhibitor"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "disk",
+    "cpu",
+    "temperature",
+    "battery",
+    "clock#time"
+  ]
 }]

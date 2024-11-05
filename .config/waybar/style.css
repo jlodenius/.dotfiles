@@ -1,4 +1,3 @@
-@import "/home/jacob/.cache/wal/colors-waybar.css";
 @import "mocha.css";
 
 /* Reset all styles */
@@ -30,6 +29,7 @@
 #network,
 #pulseaudio,
 #temperature,
+#idle_inhibitor,
 #tray {
   padding-left: 10px;
   padding-right: 10px;
@@ -37,70 +37,7 @@
   border-top: 4px solid @text;
 }
 
-/* Individual modules */
-#network {
-  border-color: @color2;
-}
-
-#network.disconnected {
-  color: @maroon;
-  border-color: @maroon;
-}
-
-#pulseaudio {
-  border-color: @color3;
-}
-
-#pulseaudio.muted {
-  color: @maroon;
-  border-color: @maroon;
-}
-
-#disk {
-  border-color: @color4;
-}
-
-#cpu {
-  border-color: @color5;
-}
-
-#cpu.warning {
-  color: @peach;
-  border-color: @peach;
-}
-
-#cpu.critical {
-  color: @maroon;
-  border-color: @maroon;
-}
-
-#temperature {
-  border-color: @color6;
-}
-
-#temperature.critical {
-  color: @maroon;
-  border-color: @maroon;
-}
-
-#battery {
-  border-color: @color7;
-}
-
-#battery.warning {
-  color: @peach;
-  border-color: @peach;
-}
-
-#battery.critical {
-  color: @maroon;
-  border-color: @maroon;
-}
-
-#clock.time {
-  border-color: @color8;
-}
-
+/* Workspace buttons */
 #workspaces button {
   padding: 5px;
   color: @text;
@@ -121,6 +58,77 @@
 #workspaces button.urgent {
   color: @maroon;
   border-color: @maroon;
+}
+
+/* Center modules */
+#tray,
+#idle_inhibitor {
+  border-color: transparent;
+  padding: 5px;
+}
+
+/* Right modules */
+#network {
+  border-color: @mauve;
+}
+
+#network.disconnected {
+  color: @maroon;
+  border-color: @maroon;
+}
+
+#pulseaudio {
+  border-color: @yellow;
+}
+
+#pulseaudio.muted {
+  color: @maroon;
+  border-color: @maroon;
+}
+
+#disk {
+  border-color: @green;
+}
+
+#cpu {
+  border-color: @teal;
+}
+
+#cpu.warning {
+  color: @peach;
+  border-color: @peach;
+}
+
+#cpu.critical {
+  color: @maroon;
+  border-color: @maroon;
+}
+
+#temperature {
+  border-color: @lavender;
+}
+
+#temperature.critical {
+  color: @maroon;
+  border-color: @maroon;
+}
+
+#battery {
+  border-color: @sky;
+}
+
+#battery.warning {
+  color: @peach;
+  border-color: @peach;
+}
+
+#battery.critical {
+  color: @maroon;
+  border-color: @maroon;
+}
+
+#clock.time {
+  border-color: @blue;
 }
 
 /* Custom styles for DP-1 (external monitor) */
