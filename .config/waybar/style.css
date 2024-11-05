@@ -63,10 +63,11 @@
 /* Center modules (not applied to the laptop monitor) */
 #waybar:not(.eDP-2) .modules-center {
   margin-top: 4px;
-  border-radius: 100px;
   padding-right: 5px;
   padding-left: 5px;
   background-color: shade(@base, 0.75);
+  border-radius: 10px;
+  border: 2px solid @surface1;
 }
 
 #tray,

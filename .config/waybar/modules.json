@@ -74,10 +74,10 @@
 
   "network": {
     "interval": 5,
-    "format-wifi": " {essid}",
-    "format-ethernet": "󰈀 {ifname}: {ipaddr}/{cidr}",
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀 {ifname}",
     "format-disconnected": "⚠ Disconnected",
-    "tooltip-format": "{ifname}: {ipaddr}"
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
   },
 
   "sway/window": {
