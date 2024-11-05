@@ -21,7 +21,6 @@
         "cpu",
         "temperature",
         "battery",
-        "clock#date",
         "clock#time"
     ],
 
@@ -31,9 +30,9 @@
     //
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "{volume}% ",
+        "format": "{icon} \u2009{volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": " {volume}%",
         "format-icons": {
             "headphones": "",
             "default": ["", ""]
@@ -49,9 +48,9 @@
             "critical": 15
         },
         // Connected to AC
-        "format": " {icon} {capacity}%",
+        "format": "\u2009{capacity}%",
         // Not connected to AC
-        "format-discharging": "{icon} {capacity}%",
+        "format-discharging": "{icon} \u2009{capacity}%",
         "format-icons": [
             "",
             "",
@@ -75,8 +74,9 @@
     },
 
     "disk": {
+        "path": "/home",
         "interval": 30,
-        "format": "󰣇 {percentage_free}%",
+        "format": " {percentage_used}%",
     },
 
     "cpu": {
@@ -114,7 +114,7 @@
     "temperature": {
         "critical-threshold": 80,
         "interval": 5,
-        "format": "{icon} {temperatureC}°C",
+        "format": "{icon}\u2009{temperatureC}°C",
         "format-icons": [
             "",
             "",

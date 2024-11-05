@@ -235,6 +235,9 @@ input * xkb_options caps:none,ctrl:nocaps
 # HOME
 output DP-1 mode 3840x2160@59.997Hz position 1707 0
 
+# Sis
+output DP-3 mode 2560x1440@59.951Hz scale 1
+
 # Laptop Tuxedo
 # Screen (2560x1600) at scale 1.5 has an effective resolution of:
 # 2560 ÷ 1.5 = 1706.67 (rounded to 1707 pixels wide)

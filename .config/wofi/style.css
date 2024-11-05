@@ -21,7 +21,9 @@
   border-radius: 1rem 1rem 0 0;
 }
 
-#window #outer-box #input:focus, #window #outer-box #input:focus-visible, #window #outer-box #input:active {
+#window #outer-box #input:focus,
+#window #outer-box #input:focus-visible,
+#window #outer-box #input:active {
   border: none;
   box-shadow: none;
 }

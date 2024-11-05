@@ -13,7 +13,7 @@
 /* The whole bar */
 #waybar {
   color: white;
-  font-family: "DejavuSansMono";
+  font-family: "Geist Mono";
   font-weight: 400;
   font-size: 18px;
   /* background-color: shade(@base, 0.5); */
@@ -97,12 +97,8 @@
   border-color: @maroon;
 }
 
-#clock.date {
-  border-color: @color8;
-}
-
 #clock.time {
-  border-color: @color9;
+  border-color: @color8;
 }
 
 #workspaces button {

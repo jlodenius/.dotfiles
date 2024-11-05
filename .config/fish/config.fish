@@ -4,7 +4,7 @@ if status is-interactive
 end
 
 # Source color scheme from pywal
-source ~/.cache/wal/colors.fish
+# source ~/.cache/wal/colors.fish
 
 # Nvidia drivers stuff
 set -x LIBVA_DRIVER_NAME nvidia
@@ -23,6 +23,9 @@ set -x PATH $PATH $HOME/.local/bin
 set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CURRENT_DESKTOP Sway
 set -x XDG_RUNTIME_DIR /run/user/(id -u)
+
+# Dark mode
+set -Ux GTK_THEME Adwaita-dark
 
 # Editor
 set -x EDITOR vim
