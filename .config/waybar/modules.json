@@ -6,11 +6,11 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": " ",
-      "deactivated": " "
+      "activated": "<span size='small'> </span>",
+      "deactivated": "<span size='small'> </span>"
     },
     // in minutes
-    "timeout": 30
+    "timeout": 120
   },
 
   "pulseaudio": {
@@ -32,7 +32,7 @@
       "critical": 15
     },
     // Connected to AC
-    "format": "\u2009{capacity}%",
+    "format": "\u2009\u2009{capacity}%",
     // Not connected to AC
     "format-discharging": "{icon} \u2009{capacity}%",
     "format-icons": [
