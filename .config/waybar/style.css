@@ -141,6 +141,8 @@
 }
 
 #clock.time {
+  /* because this is the furthest to the right */
+  margin-right: 0;
   border-color: @blue;
 }
 
