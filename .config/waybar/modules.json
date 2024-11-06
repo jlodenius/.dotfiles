@@ -3,6 +3,12 @@
   "position": "top",
   "height": 30,
 
+  "custom/power-button": {
+    "format": "<span size='small'>⏻\u2009</span>",
+    "on-click": "wlogout",
+    "tooltip": false
+  },
+
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {

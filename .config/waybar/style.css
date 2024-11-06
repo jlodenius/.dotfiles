@@ -24,7 +24,6 @@
 #clock,
 #disk,
 #cpu,
-#custom-keyboard-layout,
 #memory,
 #network,
 #pulseaudio,
@@ -71,9 +70,14 @@
 }
 
 #tray,
-#idle_inhibitor {
+#idle_inhibitor,
+#custom-power-button {
   border-color: transparent;
   padding: 5px;
+}
+
+#custom-power-button {
+  padding-right: 0;
 }
 
 /* Right modules */

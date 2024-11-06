@@ -24,6 +24,9 @@ set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CURRENT_DESKTOP Sway
 set -x XDG_RUNTIME_DIR /run/user/(id -u)
 
+# QT
+set -Ux QT_QPA_PLATFORMTHEME qt6ct
+
 # Dark mode
 set -Ux GTK_THEME Adwaita-dark
 

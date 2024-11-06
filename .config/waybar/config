@@ -23,7 +23,8 @@
   ],
   "modules-center": [
     "tray",
-    "idle_inhibitor"
+    "idle_inhibitor",
+    "custom/power-button"
   ],
   "modules-right": [
     "network",
