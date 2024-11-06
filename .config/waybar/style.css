@@ -19,7 +19,7 @@
   background-color: transparent;
 }
 
-/* Each module */
+/* Right modules */
 #battery,
 #clock,
 #disk,
@@ -28,11 +28,11 @@
 #memory,
 #network,
 #pulseaudio,
-#temperature,
-#idle_inhibitor,
-#tray {
+#temperature {
   padding-left: 10px;
   padding-right: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
   color: @text;
   border-top: 4px solid @text;
 }
