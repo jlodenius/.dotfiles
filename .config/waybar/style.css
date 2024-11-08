@@ -33,7 +33,7 @@
   margin-left: 2px;
   margin-right: 2px;
   color: @text;
-  border-top: 4px solid @text;
+  border-top: 4px solid @yellow;
 }
 
 /* Workspace buttons */
@@ -81,31 +81,23 @@
 }
 
 /* Right modules */
-#network {
-  border-color: @mauve;
-}
+#network {}
 
 #network.disconnected {
   color: @maroon;
   border-color: @maroon;
 }
 
-#pulseaudio {
-  border-color: @yellow;
-}
+#pulseaudio {}
 
 #pulseaudio.muted {
   color: @maroon;
   border-color: @maroon;
 }
 
-#disk {
-  border-color: @green;
-}
+#disk {}
 
-#cpu {
-  border-color: @teal;
-}
+#cpu {}
 
 #cpu.warning {
   color: @peach;
@@ -117,18 +109,14 @@
   border-color: @maroon;
 }
 
-#temperature {
-  border-color: @lavender;
-}
+#temperature {}
 
 #temperature.critical {
   color: @maroon;
   border-color: @maroon;
 }
 
-#battery {
-  border-color: @sky;
-}
+#battery {}
 
 #battery.warning {
   color: @peach;
@@ -143,7 +131,6 @@
 #clock.time {
   /* because this is the furthest to the right */
   margin-right: 0;
-  border-color: @blue;
 }
 
 /* Custom styles for DP-1 (external monitor) */
