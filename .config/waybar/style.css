@@ -30,8 +30,7 @@
 #temperature {
   padding-left: 10px;
   padding-right: 10px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 4px;
   color: @text;
   border-top: 4px solid @yellow;
 }
@@ -40,6 +39,7 @@
 #workspaces button {
   padding: 5px;
   color: @text;
+  margin-right: 4px;
   border-top: 4px solid @text;
 }
 
@@ -128,10 +128,7 @@
   border-color: @maroon;
 }
 
-#clock.time {
-  /* because this is the furthest to the right */
-  margin-right: 0;
-}
+#clock.time {}
 
 /* Custom styles for DP-1 (external monitor) */
 #waybar.DP-1 {
