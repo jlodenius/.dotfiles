@@ -42,4 +42,7 @@ opt.hlsearch = false
 vim.cmd("set guicursor=n:blinkon100,n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20")
 
 -- persist undo history
-vim.opt.undofile = true
+opt.undofile = true
+
+-- for avante
+opt.laststatus = 3

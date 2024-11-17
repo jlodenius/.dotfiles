@@ -54,6 +54,9 @@ set -x GTK_IM_MODULE fcitx
 set -x QT_IM_MODULE fcitx
 set -x XMODIFIERS @im=fcitx
 
+# Ollama model dir
+set -x OLLAMA_MODELS $HOME/Development/Ollama
+
 # Zoxide
 zoxide init fish | source
 
