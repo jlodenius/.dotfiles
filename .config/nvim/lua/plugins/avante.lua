@@ -9,7 +9,7 @@ return {
       ollama = {
         ["local"] = true,
         endpoint = "127.0.0.1:11434/v1",
-        model = "qwen2.5-coder:14b",
+        model = "qwen2.5-coder:7b",
         parse_curl_args = function(opts, code_opts)
           return {
             url = opts.endpoint .. "/chat/completions",
@@ -21,7 +21,7 @@ return {
             body = {
               model = opts.model,
               messages = require("avante.providers").claude.parse_messages(code_opts),
-              max_tokens = 2000,
+              -- max_tokens = 4000,
               stream = true,
             },
           }

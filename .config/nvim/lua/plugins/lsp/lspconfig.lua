@@ -6,7 +6,16 @@ return {
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
-    local border = "single"
+    local border = {
+      { "╭", "FloatBorder" },
+      { "─", "FloatBorder" },
+      { "╮", "FloatBorder" },
+      { "│", "FloatBorder" },
+      { "╯", "FloatBorder" },
+      { "─", "FloatBorder" },
+      { "╰", "FloatBorder" },
+      { "│", "FloatBorder" },
+    }
     local lspconfig = require("lspconfig")
     local lspconfigWindows = require("lspconfig.ui.windows")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -27,7 +36,7 @@ return {
       })
 
       vim.diagnostic.config({
-        float = { border = border },
+        float = { border = "single" },
       })
 
       lspconfigWindows.default_options = {
