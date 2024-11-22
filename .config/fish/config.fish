@@ -1,7 +1,6 @@
 if status is-interactive
   status --is-interactive; and pyenv init --path | source
   status --is-interactive; and direnv hook fish | source
-  nvm use lts/hydrogen
 end
 
 # Source color scheme from pywal
@@ -63,6 +62,9 @@ zoxide init fish | source
 
 # Vim keys
 fish_vi_key_bindings
+
+# Workaround to use "bash nvm" over fish
+alias bash_nvm="bash -c 'source ~/.nvm/nvm.sh && nvm'"
 
 # <C-T> = Fuzzy find files
 # <C-R> = Fuzzy find recent commands
