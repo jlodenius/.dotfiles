@@ -20,7 +20,7 @@ return {
             },
             body = {
               model = opts.model,
-              messages = require("avante.providers").claude.parse_messages(code_opts),
+              messages = require("avante.providers").openai.parse_messages(code_opts),
               -- max_tokens = 4000,
               stream = true,
             },
@@ -39,9 +39,8 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
-    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+    "nvim-tree/nvim-web-devicons",
     {
-      -- Make sure to set this up properly if you have lazy=true
       "MeanderingProgrammer/render-markdown.nvim",
       opts = {
         file_types = { "markdown", "Avante" },

@@ -3,7 +3,8 @@
   "output": "eDP-2",
   "include": "~/.config/waybar/modules.json",
   "modules-left": [
-    "sway/workspaces"
+    "sway/workspaces",
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "network",
@@ -19,7 +20,8 @@
   "output": ["DP-1", "DP-3"],
   "include": "~/.config/waybar/modules.json",
   "modules-left": [
-    "sway/workspaces"
+    "sway/workspaces",
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "tray",

@@ -101,6 +101,20 @@
     }
   },
 
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 120
+  },
+
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "format": "{icon} {name}",
+    "format-icons": {
+      "focused": "󰣇",
+      "default": "󰣇"
+    }
+  },
+
   "temperature": {
     "critical-threshold": 80,
     "interval": 5,

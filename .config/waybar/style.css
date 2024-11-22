@@ -49,7 +49,9 @@
   background: inherit;
 }
 
-#workspaces button.focused {
+/* focused = sway, active = hyprland */
+#workspaces button.focused,
+#workspaces button.active {
   color: @sapphire;
   border-color: @sapphire;
 }
