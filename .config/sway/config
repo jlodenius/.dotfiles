@@ -9,17 +9,18 @@ set $down j
 set $up k
 set $right l
 
-# Your preferred terminal emulator
+# Your preferred apps
 set $term alacritty
-
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show drun -I
 set $calc wofi-calc
+set $finder nemo
 
-#
+# Always floating finder
+for_window [app_id="$finder"] {
+  floating enable
+  resize set 1500 1000
+}
+
 ### Idle configuration
 #
 # This will lock your screen after 1000 seconds of inactivity, then turn off
@@ -42,6 +43,9 @@ exec swayidle -w \
 
     # Start your launcher
     bindsym $mod+space exec $menu
+
+    # Open finder
+    bindsym $mod+e exec $finder
 
     # Start calc
     bindsym $mod+c exec $calc
