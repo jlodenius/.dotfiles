@@ -252,6 +252,6 @@ bar {
 # BIG DOTA2 GAMEPLAY
 # - Swaps left SUPER with left ALT
 # - Lowers resolution on external monitor (only way to run dota smoothly)
-bindsym $mod+Shift+d exec "swaymsg input '*' xkb_options 'altwin:swap_lalt_lwin'; swaymsg output DP-1 mode 1920x1080@60.000Hz position 1707 520"
+bindsym $mod+Shift+d exec "swaymsg input '*' xkb_options 'altwin:swap_lalt_lwin'; swaymsg output DP-1 mode 1920x1080@60.000Hz position 2560 0"
 
 include /etc/sway/config.d/*
