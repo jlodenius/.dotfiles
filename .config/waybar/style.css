@@ -15,7 +15,8 @@
   font-family: "Geist Mono";
   font-weight: 400;
   font-size: 24px;
-  background-color: rgba(30, 30, 46, 0.5);
+  background-color: @crust;
+  border-bottom: 1px solid @mantle;
 }
 
 /* Right modules */
