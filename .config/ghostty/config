@@ -1,0 +1,11 @@
+font-family = "Geist Mono"
+font-size = 16
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+background-opacity = 0.9
+
+window-decoration = false
+window-padding-x = 5
+window-padding-y = 5

@@ -7,7 +7,7 @@ return {
     provider = "ollama",
     vendors = {
       ollama = {
-        ["local"] = true,
+        api_key_name = "",
         endpoint = "127.0.0.1:11434/v1",
         model = "qwen2.5-coder:7b",
         parse_curl_args = function(opts, code_opts)

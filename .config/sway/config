@@ -10,7 +10,7 @@ set $up k
 set $right l
 
 # Your preferred apps
-set $term alacritty
+set $term ghostty
 set $menu wofi --show drun -I
 set $calc wofi-calc
 set $finder nemo
