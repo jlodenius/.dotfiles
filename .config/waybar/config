@@ -6,6 +6,11 @@
     "sway/workspaces",
     "hyprland/workspaces"
   ],
+  "modules-center": [
+    "tray",
+    "idle_inhibitor",
+    "custom/power-button"
+  ],
   "modules-right": [
     "network",
     "pulseaudio",
