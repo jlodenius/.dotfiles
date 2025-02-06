@@ -1,13 +1,15 @@
 return {
   "robitx/gp.nvim",
   config = function()
-    local model = "deepseek-r1:8b"
+    local code_model = "qwen2.5-coder:14b"
+    local chat_model = "deepseek-r1:14b"
 
     local conf = {
       default_provider = "ollama",
-      default_command_agent = model,
-      default_chat_agent = model,
+      default_command_agent = code_model,
+      default_chat_agent = code_model,
       command_prompt_prefix_template = "Prompt:",
+      chat_confirm_delete = false,
 
       providers = {
         ollama = {
@@ -18,16 +20,22 @@ return {
       agents = {
         {
           provider = "ollama",
-          name = model,
-          chat = true,
+          name = code_model,
+          chat = false,
           command = true,
-          model = model,
+          model = code_model,
           system_prompt = "You are a general AI coding assistant. You will only output code. No explanations, comments or reasoning",
+        },
+        {
+          provider = "ollama",
+          name = chat_model,
+          chat = true,
+          command = false,
+          model = chat_model,
+          system_prompt = "You are a helpful AI assistant specialized in explaining and working with code.",
         },
       },
       hooks = {
-        -- example of making :%GpChatNew a dedicated command which
-        -- opens new chat with the entire current buffer as a context
         BufferChatNew = function(gp, _)
           -- call GpChatNew command in range mode on whole buffer
           vim.api.nvim_command("%" .. gp.config.cmd_prefix .. "ChatToggle popup")
@@ -44,7 +52,8 @@ return {
     }
     require("gp").setup(conf)
 
-    vim.keymap.set({ "n", "i" }, "<C-g>g", "<cmd>GpBufferChatNew<cr>")
-    vim.keymap.set("v", "<C-g><C-g>", ":<C-u>'<,'>GpRewrite<cr>")
+    vim.keymap.set("n", "<leader>aa", "<cmd>GpChatToggle vsplit<cr>")
+    vim.keymap.set("v", "<leader>ae", ":<C-u>'<,'>GpRewrite<cr>")
+    vim.keymap.set("n", "<leader>ad", "<cmd>GpChatDelete<cr>")
   end,
 }

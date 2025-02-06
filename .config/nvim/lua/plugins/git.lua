@@ -5,4 +5,5 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = true,
   },
+  { "akinsho/git-conflict.nvim", version = "*", config = true },
 }
