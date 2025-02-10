@@ -74,3 +74,8 @@ if type -q fzf
   set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
   set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 end
+
+# Vamos claudius
+if test -f ~/.secrets/anthropic_key
+    set -gx ANTHROPIC_API_KEY (cat ~/.secrets/anthropic_key)
+end
