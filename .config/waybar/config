@@ -1,5 +1,27 @@
 [{
-  // Laptop
+  // ThinkPad
+  "output": "eDP-1",
+  "include": "~/.config/waybar/modules.json",
+  "modules-left": [
+    "sway/workspaces",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "tray",
+    "idle_inhibitor",
+    "custom/power-button"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "disk",
+    "cpu",
+    "temperature",
+    "battery",
+    "clock#time"
+  ]
+}, {
+  // Tuxedo
   "output": "eDP-2",
   "include": "~/.config/waybar/modules.json",
   "modules-left": [
