@@ -35,6 +35,12 @@ return {
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>")
     keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
     keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
+    keymap.set(
+      "n",
+      "<leader>fr",
+      function() require("telescope.builtin").lsp_references() end,
+      { desc = "Find LSP References" }
+    )
     keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
     keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
     keymap.set("n", "<leader>/", function()
