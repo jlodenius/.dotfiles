@@ -41,8 +41,13 @@ return {
       function() require("telescope.builtin").lsp_references() end,
       { desc = "Find LSP References" }
     )
-    keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-    keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+    keymap.set(
+      "n",
+      "<leader><space>",
+      require("telescope.builtin").oldfiles,
+      { desc = "[?] Find recently opened files" }
+    )
+    keymap.set("n", "<leader>?", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
     keymap.set("n", "<leader>/", function()
       -- You can pass additional configuration to telescope to change theme, layout, etc.
       require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
