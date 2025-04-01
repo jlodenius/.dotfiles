@@ -1,7 +1,8 @@
 if status is-interactive
   status --is-interactive; and pyenv init --path | source
   status --is-interactive; and direnv hook fish | source
-  nvm use lts/hydrogen
+  clean_nvim_swap
+  nvm use lts/jod
 end
 
 # Source color scheme from pywal
