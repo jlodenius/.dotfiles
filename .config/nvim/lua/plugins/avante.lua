@@ -18,6 +18,7 @@ return {
       model = "claude-3-7-sonnet-20250219",
       temperature = 0,
       max_tokens = 4096,
+      disable_tools = true,
     },
     dual_boost = {
       enabled = false,

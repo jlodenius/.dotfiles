@@ -4,7 +4,8 @@ font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 
-background-opacity = 1.0
+background = #000
+background-opacity = 0.8
 
 window-decoration = false
 window-padding-x = 5
