@@ -23,12 +23,13 @@ return {
         json = { "prettier" },
         yaml = { "prettier" },
         lua = { "stylua" },
-        python = { "black" },
+        python = { "ruff" },
       },
       formatters = {
-        black = {
-          cwd = require("conform.util").root_file({ "pyproject.toml" }),
-        },
+        -- ...not sure if this works for ruff
+        -- ruff = {
+        --   cwd = require("conform.util").root_file({ "pyproject.toml" }),
+        -- },
         prettier = {
           condition = function()
             local root_markers = { ".git" }
