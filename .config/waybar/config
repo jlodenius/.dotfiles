@@ -44,7 +44,7 @@
   ]
 }, {
   // External
-  "output": ["DP-1", "DP-3", "HDMI-A-1"],
+  "output": ["DP-1", "DP-3", "DP-5", "HDMI-A-1"],
   "include": "~/.config/waybar/modules.json",
   "modules-left": [
     "sway/workspaces",
