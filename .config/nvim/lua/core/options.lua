@@ -45,11 +45,9 @@ opt.hlsearch = false
 vim.cmd("set guicursor=n:blinkon100,n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20")
 
 -- swap file settings
-opt.swapfile = true -- Keep swapfiles for recovery
-opt.directory = vim.fn.expand("~/.local/share/nvim/swap//") -- Where to store swapfiles
-opt.updatetime = 300 -- Faster swap file writing
-opt.backup = false -- Don't keep backup files
-opt.writebackup = false -- Don't write backup files
+opt.swapfile = false
+opt.backup = false
+opt.writebackup = false
 
 -- persist undo history
 opt.undofile = true

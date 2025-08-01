@@ -1,7 +1,6 @@
 if status is-interactive
   status --is-interactive; and pyenv init --path | source
   status --is-interactive; and direnv hook fish | source
-  clean_nvim_swap
   nvm use lts/jod
 end
 
