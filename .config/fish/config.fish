@@ -34,6 +34,9 @@ set -Ux GTK_THEME Adwaita-dark
 # Editor
 set -x EDITOR vim
 
+# Caesari authentic
+set -x AWS_PROFILE caesari-authentik-saml
+
 # Aliases
 alias kc="kubectl"
 alias vim="nvim"
