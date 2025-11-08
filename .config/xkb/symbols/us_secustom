@@ -10,5 +10,5 @@ xkb_symbols "basic" {
     key <AC11> { [ adiaeresis, quotedbl, apostrophe ] }; // ' → ä
 
     // AltGr (Right Alt) to get original US symbols
-    include "level3(ralt_switch)"
+    include "level3(lalt_switch)"
 };
