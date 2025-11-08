@@ -1,25 +1,31 @@
-@import "mocha.css";
+/* lua vim.diagnostic.disable(0) to ignore errors due to gtk-css syntax */
 
-/* Reset all styles */
+@import "mocha.css";
+@import "cows.css";
+
+/* reset all styles */
 * {
   border: none;
   border-radius: 0;
   min-height: 0;
   margin: 0;
   padding: 0;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
-/* The whole bar */
+/* the whole bar */
 #waybar {
-  color: white;
-  font-family: "Geist Mono";
-  font-weight: 400;
+  color: @text;
+  font-family: "geist mono";
+  font-weight: 600;
   font-size: 16px;
-  background-color: @crust;
-  border-bottom: 1px solid @mantle;
+  background: black;
+  /* background-color: @crust; */
+  /* border-bottom: 1px solid @mantle; */
 }
 
-/* Right modules */
+/* right modules */
 #battery,
 #clock,
 #disk,
@@ -28,32 +34,31 @@
 #network,
 #pulseaudio,
 #temperature {
+  background-color: black;
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 4px;
-  color: @text;
-  border-top: 4px solid @yellow;
+  color: @alien;
 }
 
-/* Workspace buttons */
+/* workspace buttons */
 #workspaces button {
   padding: 5px;
   color: @text;
-  margin-right: 4px;
-  border-top: 4px solid @text;
+  background-color: black;
 }
 
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
-  background: inherit;
+  background: black;
 }
 
 /* focused = sway, active = hyprland */
 #workspaces button.focused,
 #workspaces button.active {
-  color: @sapphire;
-  border-color: @sapphire;
+  color: @alien;
+  border-color: @alien;
 }
 
 #workspaces button.urgent {
@@ -61,23 +66,17 @@
   border-color: @maroon;
 }
 
-/* Center modules (not applied to the laptop monitor) */
-#waybar:not(.eDP-2) .modules-center {
-  margin-top: 4px;
+/* center modules (not applied to the laptop monitor) */
+#waybar:not(.edp-2) .modules-center {
+  /* margin-top: 4px; */
 }
 
-#tray,
-#idle_inhibitor,
-#custom-power-button {
-  border-color: transparent;
+#tray {
+  background-color: black;
   padding: 5px;
 }
 
-#custom-power-button {
-  padding-right: 0;
-}
-
-/* Right modules */
+/* right modules */
 #network {}
 
 #network.disconnected {
@@ -127,8 +126,8 @@
 
 #clock.time {}
 
-/* Custom styles for DP-1 (external monitor) */
-#waybar.DP-1,
-#waybar.DP-3 {
+/* custom styles for dp-1 (external monitor) */
+#waybar.dp-1,
+#waybar.dp-3 {
   font-size: 18px;
 }

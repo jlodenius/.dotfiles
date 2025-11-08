@@ -1,7 +1,7 @@
 if status is-interactive
   status --is-interactive; and pyenv init --path | source
   status --is-interactive; and direnv hook fish | source
-  nvm use lts/jod
+  nvm use lts/krypton
 end
 
 # Source color scheme from pywal
@@ -42,6 +42,7 @@ alias kc="kubectl"
 alias vim="nvim"
 alias bt="bluetuith"
 alias lsa="ls -a"
+alias cd="z"
 
 # Pyenv setup
 set -x PYENV_ROOT $HOME/.pyenv
