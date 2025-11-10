@@ -54,7 +54,7 @@ return {
       -- keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts) -- show documentation for what is under cursor
 
       -- jump to diagnostics
-      vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+      vim.keymap.set("n", "åd", function() vim.diagnostic.goto_next() end, opts)
       vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
 
       -- typescript specific
