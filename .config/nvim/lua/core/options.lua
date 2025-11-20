@@ -54,3 +54,5 @@ opt.undofile = true
 
 -- for avante
 opt.laststatus = 3
+
+vim.o.winborder = "rounded"

@@ -30,7 +30,7 @@ require("lazy").setup({
 vim.cmd([[
   augroup highlight_yank
     autocmd!
-    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=100}
+    au TextYankPost * silent! lua vim.hl.on_yank{higroup="IncSearch", timeout=100}
   augroup END
 ]])
 

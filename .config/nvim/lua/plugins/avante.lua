@@ -3,41 +3,50 @@ return {
   event = "VeryLazy",
   lazy = false,
   version = false,
+
   opts = {
-    ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
+    --- Provider selection
     provider = "claude",
-    -- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
-    -- currently designating it as `copilot` provider is dangerous because: https://github.com/yetone/avante.nvim/issues/1048
-    -- Of course, you can reduce the request frequency by increasing `suggestion.debounce`.
     auto_suggestions_provider = "claude",
-    claude = {
-      endpoint = "https://api.anthropic.com",
-      -- See models:
-      -- https://docs.anthropic.com/en/docs/about-claude/models/all-models
-      -- model = "claude-3-5-sonnet-20241022",
-      model = "claude-3-7-sonnet-20250219",
-      temperature = 0,
-      max_tokens = 4096,
-      disable_tools = true,
+
+    --- NEW SCHEMA: all providers must live here
+    providers = {
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-3-7-sonnet-20250219",
+        disable_tools = true,
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 4096,
+        },
+      },
+
+      --- If you ever use openai/azure/gemini you put them here:
+      -- openai = { ... }
+      -- gemini = { ... }
+      -- copilot = { ... }
     },
+
+    --- Dual Boost (unchanged, but must reference provider names)
     dual_boost = {
       enabled = false,
       first_provider = "openai",
       second_provider = "claude",
       prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
-      timeout = 60000, -- Timeout in milliseconds
+      timeout = 60000,
     },
+
     behaviour = {
-      auto_suggestions = false, -- Experimental stage
+      auto_suggestions = false,
       auto_set_highlight_group = true,
       auto_set_keymaps = true,
       auto_apply_diff_after_generation = false,
       support_paste_from_clipboard = false,
-      minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
-      enable_token_counting = true, -- Whether to enable token counting. Default to true.
+      minimize_diff = true,
+      enable_token_counting = true,
     },
+
     mappings = {
-      --- @class AvanteConflictMappings
       diff = {
         ours = "co",
         theirs = "ct",
@@ -68,78 +77,65 @@ return {
         reverse_switch_windows = "<S-Tab>",
       },
     },
+
     hints = { enabled = true },
+
     windows = {
-      ---@type "right" | "left" | "top" | "bottom"
-      position = "right", -- the position of the sidebar
-      wrap = true, -- similar to vim.o.wrap
-      width = 30, -- default % based on available width
+      position = "right",
+      wrap = true,
+      width = 30,
       sidebar_header = {
-        enabled = false, -- true, false to enable/disable the header
-        align = "center", -- left, center, right for title
+        enabled = false,
+        align = "center",
         rounded = true,
       },
       input = {
         prefix = "> ",
-        height = 8, -- Height of the input window in vertical layout
+        height = 8,
       },
       edit = {
         border = "rounded",
-        start_insert = true, -- Start insert mode when opening the edit window
+        start_insert = true,
       },
       ask = {
-        floating = false, -- Open the 'AvanteAsk' prompt in a floating window
-        start_insert = true, -- Start insert mode when opening the ask window
+        floating = false,
+        start_insert = true,
         border = "rounded",
-        ---@type "ours" | "theirs"
-        focus_on_apply = "ours", -- which diff to focus after applying
+        focus_on_apply = "ours",
       },
     },
+
     highlights = {
-      ---@type AvanteConflictHighlights
       diff = {
         current = "DiffText",
         incoming = "DiffAdd",
       },
     },
-    --- @class AvanteConflictUserConfig
+
     diff = {
       autojump = true,
-      ---@type string | fun(): any
       list_opener = "copen",
-      --- Override the 'timeoutlen' setting while hovering over a diff (see :help timeoutlen).
-      --- Helps to avoid entering operator-pending mode with diff mappings starting with `c`.
-      --- Disable by setting to -1.
       override_timeoutlen = 500,
     },
+
     suggestion = {
       debounce = 600,
       throttle = 600,
     },
   },
-  -- Local setup
-  -- opts = {
-  --   provider = "ollama",
-  --   vendors = {
-  --     ollama = {
-  --       __inherited_from = "openai",
-  --       api_key_name = "",
-  --       endpoint = "127.0.0.1:11434/v1",
-  --       model = "qwen2.5-coder:14b",
-  --     },
-  --   },
-  -- },
+
   build = "make",
+
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-    --- The below dependencies are optional,
     "nvim-tree/nvim-web-devicons",
     {
       "MeanderingProgrammer/render-markdown.nvim",
       opts = {
+        latex = { enabled = false },
         file_types = { "markdown", "Avante" },
       },
       ft = { "markdown", "Avante" },
