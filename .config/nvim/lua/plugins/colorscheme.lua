@@ -18,41 +18,78 @@ return {
     config = function()
       vim.cmd([[colorscheme melange]])
 
-      local hl = function(thing, opts) vim.api.nvim_set_hl(0, thing, opts) end
+      -- melange palette variables
+      local melange = {
+        base = "#292522",
+        surface = "#34302c",
+        overlay = "#3f3a36",
+
+        muted = "#6c6654",
+        subtle = "#8f8a7a",
+        text = "#ece1d7",
+
+        gold = "#d7c98d",
+        rose = "#b38080",
+        lavender = "#a79ac0",
+        blue = "#8aa6c1",
+        green = "#8aa387",
+
+        -- blended / UI-specific tones
+        visual_bg = "#514045", -- rose + surface blend (Melange uses this vibe)
+      }
+
+      local hl = function(group, opts) vim.api.nvim_set_hl(0, group, opts) end
 
       hl("LineNr", {
-        fg = "#5EACD3",
+        fg = melange.muted,
       })
 
       hl("CursorLineNr", {
+        fg = melange.gold,
         bg = "None",
       })
 
       hl("Cursor", {
-        bg = "#FFFFFF",
+        bg = melange.gold,
+        fg = melange.base,
       })
 
       hl("CursorLine", {
-        bg = "None",
+        bg = melange.surface,
       })
 
       hl("Visual", {
-        bg = "#655279",
+        bg = melange.visual_bg,
       })
 
-      -- Telescope
-      local telescopeBgColour = "#152238"
+      hl("MatchParen", {
+        fg = melange.lavender,
+        bg = melange.overlay,
+        bold = true,
+      })
 
+      -- Popup background for Telescope (Melange-style panels use 'surface')
+      local telescope_bg = melange.surface
+      local telescope_border = melange.overlay
+      local telescope_title = melange.gold -- accent highlight
+
+      -- Border
       hl("TelescopeBorder", {
-        bg = telescopeBgColour,
+        bg = telescope_bg,
+        fg = telescope_border,
       })
 
+      -- Main window bg
       hl("TelescopeNormal", {
-        bg = telescopeBgColour,
+        bg = telescope_bg,
+        fg = melange.text,
       })
 
+      -- Title (use gold accent to mirror Melange UI headings)
       hl("TelescopeTitle", {
-        bg = telescopeBgColour,
+        bg = telescope_bg,
+        fg = telescope_title,
+        bold = true,
       })
 
       -- Nvim tree
