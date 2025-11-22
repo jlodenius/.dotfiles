@@ -55,4 +55,11 @@ opt.undofile = true
 -- for avante
 opt.laststatus = 3
 
+-- rounded borders
 vim.o.winborder = "rounded"
+
+-- display hidden characters
+opt.listchars = "tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•"
+
+-- allow virtual text in diagnostics
+vim.diagnostic.config({ virtual_text = true, virtual_lines = false })
