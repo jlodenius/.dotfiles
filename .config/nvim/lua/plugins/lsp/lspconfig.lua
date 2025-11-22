@@ -150,8 +150,8 @@ return {
       local opts = { noremap = true, silent = true, buffer = bufnr }
 
       --  Global keymaps
-      vim.keymap.set("n", "åd", vim.diagnostic.goto_next, opts)
-      vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
+      vim.keymap.set("n", "åd", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
+      vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
 
       -- Use LspAttach autocommand to only map the following keys
       -- after the language server attaches to the current buffer
