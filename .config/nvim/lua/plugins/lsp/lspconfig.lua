@@ -45,34 +45,37 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      -- Note:
+      -- rust-analyzer is configured by rustaceanvim, so this is not needed
+      --
       -- Rust
-      vim.lsp.config("rust_analyzer", {
-        capabilities,
-        settings = {
-          ["rust-analyzer"] = {
-            cargo = {
-              features = "all",
-            },
-            checkOnSave = {
-              enable = true,
-            },
-            check = {
-              command = "clippy",
-            },
-            imports = {
-              group = {
-                enable = false,
-              },
-            },
-            completion = {
-              postfix = {
-                enable = false,
-              },
-            },
-          },
-        },
-      })
-      vim.lsp.enable("rust_analyzer")
+      -- vim.lsp.config("rust_analyzer", {
+      --   capabilities,
+      --   settings = {
+      --     ["rust-analyzer"] = {
+      --       cargo = {
+      --         features = "all",
+      --       },
+      --       checkOnSave = {
+      --         enable = true,
+      --       },
+      --       check = {
+      --         command = "clippy",
+      --       },
+      --       imports = {
+      --         group = {
+      --           enable = false,
+      --         },
+      --       },
+      --       completion = {
+      --         postfix = {
+      --           enable = false,
+      --         },
+      --       },
+      --     },
+      --   },
+      -- })
+      -- vim.lsp.enable("rust_analyzer")
 
       -- Typescript
       vim.lsp.config("ts_ls", {
@@ -164,6 +167,11 @@ return {
           vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
           vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
           vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+
+          -- DAP keymappings
+          vim.keymap.set("n", "<leader>dt", ":DapToggleBreakpoint<CR>")
+          vim.keymap.set("n", "<leader>dx", ":DapTerminate<CR>")
+          vim.keymap.set("n", "<leader>do", ":DapStepOver<CR>")
 
           local client = vim.lsp.get_client_by_id(ev.data.client_id)
 

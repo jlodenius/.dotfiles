@@ -5,5 +5,11 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = true,
   },
-  { "akinsho/git-conflict.nvim", version = "*", config = true },
+  {
+    -- TODO: fix this one, or replace
+    -- it doesn't load unless manually running GitConflictRefresh
+    "akinsho/git-conflict.nvim",
+    version = "*",
+    config = true,
+  },
 }
