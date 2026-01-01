@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true; # Highly recommended for PipeWire to prevent audio stutter
+  services.pulseaudio.enable = false;
 
   services.pipewire = {
     enable = true;
