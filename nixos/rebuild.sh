@@ -1,40 +1,57 @@
 #!/usr/bin/env bash
 #
-# I believe there are a few ways to do this:
+# NixOS Rebuild Script (Flake-based)
+# Optimized for 2026 workflows
 #
-#    1. My current way, using a minimal /etc/nixos/configuration.nix that just imports my config from my home directory (see it in the gist)
-#    2. Symlinking to your own configuration.nix in your home directory (I think I tried and abandoned this and links made relative paths weird)
-#    3. My new favourite way: as @clot27 says, you can provide nixos-rebuild with a path to the config, allowing it to be entirely inside your dotfies, with zero bootstrapping of files required.
-#       `nixos-rebuild switch -I nixos-config=path/to/configuration.nix`
-#    4. If you uses a flake as your primary config, you can specify a path to `configuration.nix` in it and then `nixos-rebuild switch —flake` path/to/directory
-# As I hope was clear from the video, I am new to nixos, and there may be other, better, options, in which case I'd love to know them! (I'll update the gist if so)
 
-# A rebuild script that commits on a successful build
-set -e
+set -e # Exit on any individual command failure
 
-# Early return if no changes were detected (thanks @singiamtel!)
-if git diff --quiet '*.nix'; then
-    echo "No changes detected, exiting."
+# 1. Ensure we are in the dotfiles directory
+# (Adjust this path if your dotfiles are elsewhere)
+cd "$HOME/.dotfiles"
+
+# 2. Stage all files (Important: Flakes ignore untracked files!)
+# This handles new files so the build doesn't fail on "file not found"
+git add -A
+
+# 3. Format with Alejandra
+echo "🎨 Formatting..."
+alejandra . &>/dev/null || (alejandra . ; echo "Formatting failed!" && exit 1)
+
+# 4. Check for actual changes
+# If nothing changed after formatting, no need to rebuild
+if git diff --quiet HEAD; then
+    echo "✨ No changes detected, exiting."
     exit 0
 fi
 
-# Autoformat your nix files
-alejandra . &>/dev/null \
-  || ( alejandra . ; echo "formatting failed!" && exit 1)
+# 5. Show the diff to the user
+git diff -U0 HEAD
 
-# Shows your changes
-git diff -U0 '*.nix'
+echo "🚀 NixOS Rebuilding..."
 
-echo "NixOS Rebuilding..."
+# 6. The Build Command
+# We use 'tee' so you can see the progress live, while still logging to a file.
+# The PIPESTATUS[0] trick captures the exit code of nixos-rebuild, not tee.
+sudo nixos-rebuild switch --flake . 2>&1 | tee nixos-switch.log
+BUILD_EXIT_CODE=${PIPESTATUS[0]}
 
-# Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake . &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+# 7. Post-build Logic
+if [ $BUILD_EXIT_CODE -ne 0 ]; then
+    echo "❌ Build failed! Recent errors:"
+    grep --color -i "error" nixos-switch.log || tail -n 20 nixos-switch.log
+    exit 1
+fi
 
-# Get current generation metadata
-current=$(nixos-rebuild list-generations | grep current)
+# 8. Success! Commit the changes
+# Get the current generation number for the commit message
+current=$(nixos-rebuild list-generations | grep current | awk '{print $1}')
 
-# Commit all changes with the generation metadata
-git commit -am "$current"
+echo "📝 Committing generation $current..."
+git commit -am "Generation $current: $(date +'%Y-%m-%d %H:%M:%S')"
 
-# Notify all OK!
-notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
+# 9. Cleanup & Notify
+rm nixos-switch.log
+notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available -t 3000
+
+echo "✅ Done! System is now at generation $current."
