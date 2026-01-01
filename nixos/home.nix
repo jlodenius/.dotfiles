@@ -55,19 +55,27 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
-      # This line defines the order of what you see
-      format = "$directory$git_branch$git_status$character";
+      # Gruvbox Dark Palette colors
+      # bg0: #282828, red: #fb4934, green: #b8bb26, yellow: #fabd2f, blue: #83a598
+
+      format = "$directory$git_branch$git_status$nix_shell$character";
+
+      directory = {
+        style = "bold #83a598"; # Gruvbox Blue
+      };
 
       git_branch = {
         symbol = " ";
-        style = "bold #f2777a";
-        format = "on [$symbol$branch]($style) ";
+        style = "bold #fb4934"; # Gruvbox Red
       };
 
       git_status = {
-        style = "bold #99cc99";
-        # Simple format that avoids the bracket parsing error
-        format = "([$all_status$ahead_behind]($style) )";
+        style = "bold #fabd2f"; # Gruvbox Yellow
+      };
+
+      character = {
+        success_symbol = "[➜](bold #b8bb26)"; # Gruvbox Green
+        error_symbol = "[➜](bold #fb4934)"; # Gruvbox Red
       };
     };
   };
