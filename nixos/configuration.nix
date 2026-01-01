@@ -73,6 +73,22 @@
     extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
   };
 
+  # Enable nix-ld to run unpatched binaries (like Node from nvm)
+  programs.nix-ld.enable = true;
+
+  # List the libraries that these binaries usually expect to find
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    fuse3
+    icu
+    nss
+    openssl
+    curl
+    expat
+    # Add any other libraries that specific npm packages might need
+  ];
+
   # Sound stuff + pipewire also used for screen sharing?
   # sound.enable = true;
   # security.rtkit.enable = true;
