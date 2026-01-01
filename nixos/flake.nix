@@ -16,31 +16,40 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser }:
-    let
-      system = "x86_64-linux";
-      overlay-unstable = final: prev: {
-        unstable = import nixpkgs-unstable {
-          system = prev.stdenv.hostPlatform.system;
-          config.allowUnfree = true;
-        };
-      };
-    in {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          # Overlays-module makes "pkgs.unstable" available in configuration.nix
-          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-          ./configuration.nix
-
-          # Add Home Manager as a module
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jacob = import ./home.nix;
-          }
-        ];
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    zen-browser,
+  }: let
+    system = "x86_64-linux";
+    overlay-unstable = final: prev: {
+      unstable = import nixpkgs-unstable {
+        system = prev.stdenv.hostPlatform.system;
+        config.allowUnfree = true;
       };
     };
+  in {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      inherit system;
+      modules = [
+        # Overlays-module makes "pkgs.unstable" available in configuration.nix
+        ({
+          config,
+          pkgs,
+          ...
+        }: {nixpkgs.overlays = [overlay-unstable];})
+        ./configuration.nix
+
+        # Add Home Manager as a module
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.jacob = import ./home.nix;
+        }
+      ];
+    };
+  };
 }

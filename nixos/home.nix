@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "jacob";
   home.homeDirectory = "/home/jacob";
   home.stateVersion = "25.11";
@@ -36,16 +38,26 @@
       fish_vi_key_bindings
     '';
     plugins = [
-      { name = "bass"; src = pkgs.fishPlugins.bass.src; }
-      { name = "nvm"; src = pkgs.fishPlugins.nvm.src; }
+      {
+        name = "bass";
+        src = pkgs.fishPlugins.bass.src;
+      }
+      {
+        name = "nvm";
+        src = pkgs.fishPlugins.nvm.src;
+      }
     ];
   };
 
   # Git Configuration
   programs.git = {
     enable = true;
-    userName = "jlodenius";
-    userEmail = "jacoblodenius@gmail.com";
+    settings = {
+      user = {
+        name = "jlodenius";
+        email = "jacoblodenius@gmail.com";
+      };
+    };
     extraConfig = {
       init.defaultBranch = "master";
     };
