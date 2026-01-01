@@ -33,7 +33,7 @@ sudo nixos-rebuild switch --flake . &>nixos-switch.log || (cat nixos-switch.log 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
 
-# Commit all changes witih the generation metadata
+# Commit all changes with the generation metadata
 git commit -am "$current"
 
 # Notify all OK!

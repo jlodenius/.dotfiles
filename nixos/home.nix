@@ -57,8 +57,6 @@
         name = "jlodenius";
         email = "jacoblodenius@gmail.com";
       };
-    };
-    extraConfig = {
       init.defaultBranch = "master";
     };
   };
