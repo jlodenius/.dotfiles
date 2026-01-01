@@ -52,19 +52,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Maybe move to home.nix?
-  environment.sessionVariables = {
-    # XDG & Desktop
-    XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-
-    # Tooling
-    EDITOR = "nvim";
-    SUDO_EDITOR = "nvim";
-    AWS_PROFILE = "caesari-authentik-saml";
-    GPG_TTY = "$(tty)";
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -81,11 +68,6 @@
     yazi
     rustup
     alejandra
-    # zoxide
-    # git
-    # direnv
-    # nix-direnv
-    # fzf
   ];
 
   programs.fish.enable = true;
@@ -94,11 +76,6 @@
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
   };
 
   # Screen sharing, link/file opening etc..

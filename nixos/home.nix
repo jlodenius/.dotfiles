@@ -9,10 +9,12 @@
 
   # Environment Variables (Session-wide)
   home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-    SUDO_EDITOR = "nvim";
     MOZ_ENABLE_WAYLAND = "1";
+    GPG_TTY = "$(tty)";
+
+    # XDG & Desktop
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_CURRENT_DESKTOP = "Hyprland";
 
     # App specific
     AWS_PROFILE = "caesari-authentik-saml";
@@ -24,7 +26,7 @@
     "$HOME/.local/bin"
   ];
 
-  # Fish Shell (The Clean Way)
+  # Fish
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -80,7 +82,7 @@
     };
   };
 
-  # Git Configuration
+  # Git
   programs.git = {
     enable = true;
     settings = {
@@ -98,7 +100,12 @@
     options = ["--cmd cd"];
   };
 
-  # User Packages (Local apps)
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
+  # Packages
   home.packages = with pkgs; [
     gh
     direnv
