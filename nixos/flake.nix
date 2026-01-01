@@ -6,14 +6,10 @@
   };
 
   outputs = { self, nixpkgs }: {
-    let
-      lib = nixpkgs.lib;
-    in {
-      nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [ ./configuration.nix ];
-        };
+    nixosConfigurations = {
+      nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./configuration.nix ];
       };
     };
   };
