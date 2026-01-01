@@ -7,7 +7,7 @@
 {
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
+      ../../../../etc/nixos/hardware-configuration.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
