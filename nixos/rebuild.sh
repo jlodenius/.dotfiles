@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
-#
-# NixOS Rebuild Script (Flake-based)
-# Optimized for 2026 workflows
-#
 
 set -e # Exit on any individual command failure
 
 # 1. Ensure we are in the dotfiles directory
-# (Adjust this path if your dotfiles are elsewhere)
 cd "$HOME/.dotfiles/nixos"
 
 # 2. Stage all files (Important: Flakes ignore untracked files!)
@@ -43,16 +38,10 @@ if [ $BUILD_EXIT_CODE -ne 0 ]; then
     exit 1
 fi
 
-# 8. Success! Commit the changes
-# A more robust way to get the generation number:
+# 8. Commit the changes on success
 gen=$(sudo nix-env -p /nix/var/nix/profiles/system --list-generations | grep current | awk '{print $1}')
 
-# If for some reason it's still empty, use a timestamp
-if [ -z "$gen" ]; then
-    msg="NixOS rebuild at $(date +'%Y-%m-%d %H:%M:%S')"
-else
-    msg="Generation $gen: $(date +'%Y-%m-%d %H:%M:%S')"
-fi
+msg="Generation $gen: $(date +'%Y-%m-%d %H:%M:%S')"
 
 echo "📝 Committing: $msg"
 git commit -am "$msg"
@@ -60,4 +49,4 @@ git commit -am "$msg"
 # 9. Cleanup
 rm nixos-switch.log
 
-echo "✅ Done! System is now at generation $current."
+echo "✅ Done! System is now at generation $gen."
