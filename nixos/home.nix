@@ -55,22 +55,19 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
-      # This disables everything EXCEPT the directory and git
+      # This line defines the order of what you see
       format = "$directory$git_branch$git_status$character";
 
-      directory = {
-        style = "bold green";
-      };
-
       git_branch = {
-        symbol = " "; # The standard git branch icon
-        style = "bold #f2777a"; # Your old red color
+        symbol = " ";
+        style = "bold #f2777a";
         format = "on [$symbol$branch]($style) ";
       };
 
       git_status = {
-        style = "bold #99cc99"; # Your old green color
-        format = "([\[$all_status$ahead_behind\]]($style) )";
+        style = "bold #99cc99";
+        # Simple format that avoids the bracket parsing error
+        format = "([$all_status$ahead_behind]($style) )";
       };
     };
   };
