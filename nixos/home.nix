@@ -32,8 +32,6 @@
       vim = "nvim";
       bt = "bluetuith";
       lsa = "ls -a";
-      cd = "z";
-      test = "122";
     };
     interactiveShellInit = ''
       fish_vi_key_bindings
@@ -60,6 +58,12 @@
       };
       init.defaultBranch = "master";
     };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    options = ["--cmd cd"];
   };
 
   # User Packages (Local apps)
