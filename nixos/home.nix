@@ -30,7 +30,6 @@
     publicShare = "${config.home.homeDirectory}";
   };
 
-  # Environment Variables
   home.sessionVariables = {
     MOZ_ENABLE_WAYLAND = "1";
     GPG_TTY = "$(tty)";
@@ -43,13 +42,11 @@
     AWS_PROFILE = "caesari-authentik-saml";
   };
 
-  # Path Exports
   home.sessionPath = [
     "$HOME/.cargo/bin"
     "$HOME/.local/bin"
   ];
 
-  # Packages
   home.packages = with pkgs; [
     # System & UI
     ghostty
