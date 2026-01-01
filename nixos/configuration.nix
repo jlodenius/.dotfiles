@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -53,15 +50,16 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
     wget
   ];
 
+  # Fish is configured in home.nix but has to be enabled here to use as default shell
+  # for users
   programs.fish.enable = true;
 
+  # Compositor also goes in configuration
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -88,14 +86,6 @@
     curl
     expat
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   system.stateVersion = "25.11";
   nix.settings.experimental-features = ["nix-command" "flakes"];
