@@ -46,6 +46,7 @@
     alejandra
     gcc
     gnumake
+    bluetuith
   ];
 
   programs.git = {
