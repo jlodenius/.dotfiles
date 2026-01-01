@@ -22,7 +22,7 @@ set -x PATH $PATH $HOME/.local/bin
 
 # XDG
 set -x XDG_CONFIG_HOME $HOME/.config
-set -x XDG_CURRENT_DESKTOP Sway
+set -x XDG_CURRENT_DESKTOP Hyprland
 set -x XDG_RUNTIME_DIR /run/user/(id -u)
 
 # QT
