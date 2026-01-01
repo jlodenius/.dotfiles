@@ -43,11 +43,12 @@
 
   programs.tmux = {
     enable = true;
-    shortcut = "a"; # Replaces 'set -g prefix C-a'
-    baseIndex = 1; # Replaces 'set -g base-index 1'
-    newSession = true; # Spawns a session if one doesn't exist
-    escapeTime = 0; # Replaces 'set -sg escape-time 0'
-    mouse = true; # Replaces 'set -g mouse on'
+    keyMode = "vi";
+    shortcut = "a";
+    baseIndex = 1;
+    newSession = true;
+    escapeTime = 0;
+    mouse = true;
 
     # This handles the plugin AND the 'run-shell' logic automatically
     plugins = with pkgs; [
