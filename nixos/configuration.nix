@@ -80,11 +80,11 @@
     stow
     yazi
     rustup
-    zoxide
-    git
-    direnv
-    nix-direnv
-    fzf
+    # zoxide
+    # git
+    # direnv
+    # nix-direnv
+    # fzf
   ];
 
   programs.fish = {
