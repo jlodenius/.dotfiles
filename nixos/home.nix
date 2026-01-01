@@ -33,7 +33,7 @@
       bt = "bluetuith";
       lsa = "ls -a";
       cd = "z";
-      test = "123";
+      test = "1235";
     };
     interactiveShellInit = ''
       fish_vi_key_bindings

@@ -8,7 +8,7 @@ set -e # Exit on any individual command failure
 
 # 1. Ensure we are in the dotfiles directory
 # (Adjust this path if your dotfiles are elsewhere)
-cd "$HOME/.dotfiles"
+cd "$HOME/.dotfiles/nixos"
 
 # 2. Stage all files (Important: Flakes ignore untracked files!)
 # This handles new files so the build doesn't fail on "file not found"
