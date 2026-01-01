@@ -81,6 +81,7 @@
     yazi
     rustup
     alejandra
+    fish
     # zoxide
     # git
     # direnv
