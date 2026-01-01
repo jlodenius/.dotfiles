@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./modules/audio.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -86,19 +87,7 @@
     openssl
     curl
     expat
-    # Add any other libraries that specific npm packages might need
   ];
-
-  # Sound stuff + pipewire also used for screen sharing?
-  # sound.enable = true;
-  # security.rtkit.enable = true;
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32bit = true;
-  #   pulse.enable = true;
-  #   jack.enable = true;
-  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
