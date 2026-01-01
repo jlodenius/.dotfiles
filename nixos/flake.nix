@@ -16,7 +16,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser }:
     let
       system = "x86_64-linux";
       overlay-unstable = final: prev: {
