@@ -16,7 +16,7 @@
         };
       };
     in {
-      nixosConfigurations."<hostname>" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           # Overlays-module makes "pkgs.unstable" available in configuration.nix
