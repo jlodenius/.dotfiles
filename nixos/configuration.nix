@@ -81,13 +81,14 @@
     yazi
     rustup
     alejandra
-    fish
     # zoxide
     # git
     # direnv
     # nix-direnv
     # fzf
   ];
+
+  programs.fish.enable = true;
 
   programs.hyprland = {
     enable = true;
