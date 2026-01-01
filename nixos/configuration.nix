@@ -80,33 +80,13 @@
     stow
     yazi
     rustup
+    alejandra
     # zoxide
     # git
     # direnv
     # nix-direnv
     # fzf
   ];
-
-  programs.fish = {
-    enable = true;
-
-#   plugins = [
-#     { name = "bass"; src = pkgs.fishPlugins.bass.src; }
-#     { name = "nvm"; src = pkgs.fishPlugins.nvm.src; }
-#   ];
-
-    shellAliases = {
-      kc = "kubectl";
-      vim = "nvim";
-      bt = "bluetuith";
-      lsa = "ls -a";
-      cd = "z";
-    };
-
-    interactiveShellInit = ''
-      fish_vi_key_bindings
-    '';
-  };
 
   programs.hyprland = {
     enable = true;
