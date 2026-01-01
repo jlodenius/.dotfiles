@@ -99,6 +99,11 @@
       set-window-option -g window-status-format "#[bg=black,fg=white] #I #W "
       set-window-option -g window-status-current-format "#[bg=brightblack,fg=brightwhite] #I #W "
 
+      # Vi-style copying logic
+      bind-key -T copy-mode-vi v send-keys -X begin-selection
+      bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+      bind-key -T copy-mode-vi Escape send-keys -X cancel
+
       # Pane borders & Style
       set -g window-style "bg=default,fg=white"
       set -g window-active-style "bg=default,fg=brightwhite"
