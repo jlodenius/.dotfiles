@@ -39,6 +39,8 @@
     yazi
     rustup
     alejandra
+    gcc
+    gnumake
   ];
 
   programs.tmux = {
