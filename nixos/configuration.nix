@@ -58,15 +58,6 @@
     vim
     tmux
     wget
-    discord
-    ghostty
-    waybar
-    swww
-    vicinae
-    google-chrome
-    stow
-    yazi
-    rustup
     alejandra
   ];
 

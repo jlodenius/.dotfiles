@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/jacob";
   home.stateVersion = "25.11";
 
-  # Environment Variables (Session-wide)
+  # Environment Variables
   home.sessionVariables = {
     MOZ_ENABLE_WAYLAND = "1";
     GPG_TTY = "$(tty)";
@@ -111,6 +111,15 @@
     direnv
     nix-direnv
     fzf
+    discord
+    ghostty
+    waybar
+    swww
+    vicinae
+    google-chrome
+    stow
+    yazi
+    rustup
   ];
 
   # Let Home Manager install and manage itself.
