@@ -44,14 +44,20 @@ if [ $BUILD_EXIT_CODE -ne 0 ]; then
 fi
 
 # 8. Success! Commit the changes
-# Get the current generation number for the commit message
-current=$(nixos-rebuild list-generations | grep current | awk '{print $1}')
+# A more robust way to get the generation number:
+gen=$(sudo nix-env -p /nix/var/nix/profiles/system --list-generations | grep current | awk '{print $1}')
 
-echo "📝 Committing generation $current..."
-git commit -am "Generation $current: $(date +'%Y-%m-%d %H:%M:%S')"
+# If for some reason it's still empty, use a timestamp
+if [ -z "$gen" ]; then
+    msg="NixOS rebuild at $(date +'%Y-%m-%d %H:%M:%S')"
+else
+    msg="Generation $gen: $(date +'%Y-%m-%d %H:%M:%S')"
+fi
 
-# 9. Cleanup & Notify
+echo "📝 Committing: $msg"
+git commit -am "$msg"
+
+# 9. Cleanup
 rm nixos-switch.log
-notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available -t 3000
 
 echo "✅ Done! System is now at generation $current."
