@@ -1,3 +1,0 @@
-path '/home/jacob/.dotfiles' does not contain a 'flake.nix', searching up
-error: path '/home/jacob/.dotfiles' is not part of a flake (neither it nor its parent directories contain a 'flake.nix' file)
-Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."nixos".config.system.build.nixos-rebuild' --no-link' returned non-zero exit status 1.
