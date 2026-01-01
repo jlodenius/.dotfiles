@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  zen-browser,
   ...
 }: {
   imports = [
@@ -33,23 +34,31 @@
 
   # Packages
   home.packages = with pkgs; [
-    gh
-    discord
+    # System & UI
     ghostty
     waybar
     swww
     vicinae
-    google-chrome
+    bluetuith
     stow
-    yazi
+
+    # Dev tools
+    gh
     rustup
     alejandra
     gcc
     gnumake
     cmake
+
+    # CLI utils
     ripgrep
     fd
-    bluetuith
+    yazi
+
+    # Applications
+    google-chrome
+    discord
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.git = {
