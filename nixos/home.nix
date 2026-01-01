@@ -46,6 +46,9 @@
     alejandra
     gcc
     gnumake
+    cmake
+    ripgrep
+    fd
     bluetuith
   ];
 
