@@ -56,9 +56,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
-    tmux
     wget
-    alejandra
   ];
 
   programs.fish.enable = true;
