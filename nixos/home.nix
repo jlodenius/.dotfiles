@@ -13,6 +13,15 @@
   home.homeDirectory = "/home/jacob";
   home.stateVersion = "25.11";
 
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+
+    download = "${config.home.homeDirectory}/Downloads";
+    documents = "${config.home.homeDirectory}/Documents";
+    desktop = null;
+  };
+
   # Environment Variables
   home.sessionVariables = {
     MOZ_ENABLE_WAYLAND = "1";
