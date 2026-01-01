@@ -17,9 +17,17 @@
     enable = true;
     createDirectories = true;
 
+    # Create these
     download = "${config.home.homeDirectory}/Downloads";
     documents = "${config.home.homeDirectory}/Documents";
-    desktop = null;
+
+    # And ignore these
+    desktop = "${config.home.homeDirectory}";
+    music = "${config.home.homeDirectory}";
+    pictures = "${config.home.homeDirectory}";
+    videos = "${config.home.homeDirectory}";
+    templates = "${config.home.homeDirectory}";
+    publicShare = "${config.home.homeDirectory}";
   };
 
   # Environment Variables
