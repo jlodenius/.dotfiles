@@ -108,6 +108,19 @@ return {
     })
     vim.lsp.enable("emmet_ls")
 
+    -- Nix
+    vim.lsp.config("nil_ls", {
+      capabilities = capabilities,
+      settings = {
+        ["nil"] = {
+          formatting = {
+            command = { "alejandra" },
+          },
+        },
+      },
+    })
+    vim.lsp.enable("nil_ls")
+
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { noremap = true, silent = true, buffer = bufnr }
